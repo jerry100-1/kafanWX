@@ -1,0 +1,61 @@
+/* pages/firstpage/confirmorder/confirmorder.wxss */
+page
+{
+  background:#f0f0f0;
+}
+.wrapconfirmPage
+{
+ margin-left:40rpx;
+ margin-right:40rpx;
+ margin-top:40rpx;
+ background:#f0f0f0;
+ height:auto;
+}
+.confirmPagePartTitle
+{
+  width:100%;
+  height:44rpx;
+  display:flex;
+  flex-direction:row;
+  background:#f0f0f0;
+  align-items:center;
+  justify-content:space-between;
+}
+.confirmPaTitleLeft,.confirmPaTitleRight
+{
+ 
+}
+.confirmPagePartTitle view:nth-child(1),.confirmPagePartTitle view:nth-child(2)
+{
+  flex:1;
+  height:44rpx;
+  line-height:44rpx;
+  justify-content:center;
+  font-size:26rpx;
+  text-align: center;
+  border-radius:10rpx;
+}
+.confirmPagePartTitle view:nth-child(2)
+{
+  background:#fff;
+}
+
+.confirmPaTitleRight{
+  background:rgba(0,0,0,0.16);
+}
+.activeClassStyle
+{
+  background:#5dccd3!important;
+  color:#fff!important;
+}
+.normalClassStyle
+{
+  background:#fff!important;
+  color:rgba(0,0,0,0.66)!important;
+}
+.mapContent
+{
+  height:448rpx;
+  background:#fff;
+  margin-top:30rpx;
+}

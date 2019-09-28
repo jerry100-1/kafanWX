@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "编辑收货地址",
+  "backgroundColor": "#000",
+  "backgroundTextStyle": "light"
+}

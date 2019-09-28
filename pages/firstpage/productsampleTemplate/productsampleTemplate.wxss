@@ -1,0 +1,154 @@
+/* pages/firstpage/productsampleTemplate/productsampleTemplate.wxss */
+.homepart4Content
+{
+  height:auto;
+  margin-left:25rpx;
+  margin-right:25rpx;
+  background:#fff;
+}
+.hpcontBox
+{
+  width:100%;
+  height:504rpx;
+  display:flex;
+  background:#f0f0f0;
+  align-items:center;
+  justify-content:space-between;
+}
+.hpcontLeftBox
+{
+   width:49%;
+   height:504rpx;
+   background:#fff;
+   position:relative;
+}
+.hpcontRightBox
+{
+   width:49%;
+   height:504rpx;
+    background:#fff;
+}
+.hpcontLeftBoxInner
+{
+  width:92%;
+  height:504rpx;
+  background:#fff;
+  margin-left:auto;
+  margin-right:auto;
+}
+.hpcontLeftBoxInnerTop
+{
+ height:400rpx;
+ position:relative;
+}
+.hpLeftBoxInImg1
+{
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:400rpx;
+}
+.bottomlineView
+{
+  width:100%;
+  height:15rpx;
+  background:#f0f0f0;
+}
+
+.hpLeftBoxInImg2
+{
+  position:absolute;
+  top:10rpx;
+  right:0px;
+  width:79rpx;
+  height:79rpx;
+}
+.hpLeftBoxInText1
+{
+  padding:2rpx 4rpx;
+  font-size:12px;
+  background:#ed4d57;
+  color:#fff;
+  position:absolute;
+  left:-10rpx;
+  border-radius:5rpx;
+  bottom:5rpx;
+}
+.hpcontLeftBoxInnerBottom
+{
+ width:100%;
+ height:104rpx;
+ display:flex;
+ flex-direction:row;
+ align-items:center;
+}
+.hpcoLxIerBmLeft
+{
+  width:60%;
+  height:104rpx;
+  /* background:mediumorchid; */
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow: hidden;
+  font-size:12px;
+}
+
+.hpcoLxIerBmRight
+{
+  width:40%;
+  height:104rpx;
+  display:flex;
+  justify-content:flex-end;
+  align-items:flex-end;
+}
+.hpcoLxIerBmLeft1
+{
+  width:77%;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow: hidden;
+  font-size:12px;
+}
+.hpcoLxIerBmRight1
+{
+  width:23%;
+}
+
+.kknnbg
+{
+  margin-top:20rpx;
+  color:#ED4D57;
+}
+.kknnbg1
+{
+  color:#ED4D57;
+}
+.kknnbg2
+{
+ color:rgba(0,0,0,0.36);
+ margin-left:3rpx;
+}
+.kknnbgText1
+{
+  font-size:10px;
+}
+.specialText
+{
+  font-size:14px;
+}
+.buySoText
+{
+  padding:4rpx 6rpx;
+  background:#ED4D57;
+  color:#fff;
+  text-align:center;
+  font-size:12px; 
+  border-radius:6rpx;
+  position:relative;
+  top:-2rpx;
+}

@@ -1,0 +1,369 @@
+<!--pages/firstpage/storeSelf/storeSelf.wxml-->
+<view class="wrapAllStoreCtn">
+
+ <!-- --------------------------------券的处理 --------------------------------->
+   <!-- 全场通用券方式 -->
+   <view class='showModalDiv' wx:if="{{hidden100}}">
+       <view class="showModalDivInner">
+
+         <!-- 全场通用券 -->
+         <view class="wrapCashCouponCardDiv">
+            <text class="userfulCashCouponTitle">点击全场通用券使用</text>
+            <view class="WrapCouponCardDemo" wx:for="{{theUserCommonCouponCard}}" wx:key="*this">
+                <!-- 现金券模型 -->
+                <view class="CashCouponCardDemo" v-if="{{item.canuse==1}}" data-thecommonwayprice="{{item.price}}" data-id="{{item.id}}" data-unused="{{item.unused}}" bindtap='closeTheShowModal'>
+                   <view class="CashCouponCardDemoLeft">
+                     <text class="leftChinaIcon">￥</text>
+                     <text class="rightNumberText">
+                          <text class="ffText1">{{item.price}}</text>
+                          <text class="ffText2">满{{item.fullless}}</text>
+                     </text>
+                   </view>
+                   <view class="CashCouponCardDemoRight">
+                       <text class="CashCouponText1">{{item.title}}</text>
+                       <text class="CashCouponText2">{{item.starttime.datetime}}-{{item.endtime.datetime}}</text>
+                       <view class="CashCouponText3">
+                         <text style="color:red">状态:{{item.canuse==1?'可用':'不可用'}}</text>
+                         <text>X{{item.unused}}</text>
+                       </view>
+                   </view>
+                </view>
+                <!-- 现金券模型 -->
+                <!-- <view class="CashCouponCardDemo">
+                   <view class="CashCouponCardDemoLeft">
+                     <text class="leftChinaIcon">￥</text>
+                     <text class="rightNumberText">
+                          <text class="ffText1">70</text>
+                          <text class="ffText2">满300</text>
+                     </text>
+                   </view>
+                   <view class="CashCouponCardDemoRight">
+                       <text class="CashCouponText1">全场通用</text>
+                       <text class="CashCouponText2">2019.05.05-02019.07.07</text>
+                       <view class="CashCouponText3">X10</view>
+                   </view>
+                </view> -->
+            </view>
+          
+
+         </view>
+
+        <!-- -------------------------------- -->
+        <!-- 不可用优惠券 -->
+              <!-- <view class="wrapCashCouponCardDiv">
+                  <text class="userfulCashCouponTitle">不可用优惠券</text>
+                  <view class="WrapCouponCardDemo" wx:for="{{theUserCommonCouponCard}}" wx:key="*this"> -->
+                      <!-- 现金券模型 -->
+                      <!-- <view class="CashCouponCardDemo CashCouponCardDemo2">
+                        <view class="CashCouponCardDemoLeft CashCouponCardDemoLeft2">
+                          <text class="leftChinaIcon">￥</text>
+                          <text class="rightNumberText">
+                                <text class="ffText1">{{item.price}}</text>
+                                <text class="ffText2">满{{item.fullless}}</text>
+                          </text>
+                        </view>
+                        <view class="CashCouponCardDemoRight">
+                            <text class="CashCouponText1">全场通用</text>
+                            <text class="CashCouponText2">2019.05.05-02019.07.07</text>
+                            <view class="CashCouponText3">X10</view>
+                        </view>
+                      </view> -->
+                      <!-- 现金券模型 -->
+                      <!-- <view class="CashCouponCardDemo CashCouponCardDemo2">
+                        <view class="CashCouponCardDemoLeft CashCouponCardDemoLeft2">
+                          <text class="leftChinaIcon">￥</text>
+                          <text class="rightNumberText">
+                                <text class="ffText1">70</text>
+                                <text class="ffText2">满300</text>
+                          </text>
+                        </view>
+                        <view class="CashCouponCardDemoRight">
+                            <text class="CashCouponText1">全场通用</text>
+                            <text class="CashCouponText2">2019.05.05-02019.07.07</text>
+                            <view class="CashCouponText3">X10</view>
+                        </view>
+                      </view>
+                    -->
+                  <!-- </view>               
+              </view> -->
+          <!-- -------------------------------- -->
+         
+       </view>
+    
+   </view>
+
+   <!-- 单品券方式 -->
+    <view class='showModalDiv' wx:if="{{hidden101}}">
+       <view class="showModalDivInner">
+
+         <!-- 单品券 -->
+         <view class="wrapCashCouponCardDiv wrapSingleCashCouponCardDiv">
+            <text class="userfulCashCouponTitle">点击单品券使用</text>
+            <view class="WrapCouponCardDemo" wx:if="{{theSingleCouponCardListLength>0}}" wx:for="{{theSingleCouponCardList}}"  wx:key="*this">
+                <!-- 单品券模型 -->
+                 <view class="CashCouponCardDemo" bindtap="getRespectiveMyAllSinglePrice" data-singlecouponprice="{{item.price}}" data-state="{{item.index}}"  v-if="{{item.canuse==1}}" data-unused="{{item.unused}}" data-singlecounponid="{{item.id}}">
+                   <view class="CashCouponCardDemoLeft">
+                     <text class="leftChinaIcon">￥</text>
+                     <text class="rightNumberText">
+                          <text class="ffText1">{{item.price}}</text>
+                          <text class="ffText2">满{{item.fullless}}</text>
+                     </text>
+                   </view>
+                   <view class="CashCouponCardDemoRight">
+                       <text class="CashCouponText1">{{item.title}}</text>
+                       <text class="CashCouponText2">{{item.starttime.datetime}}-{{item.endtime.datetime}}</text>
+                       <view class="CashCouponText3">
+                        <text style="color:red">状态:{{item.canuse==1?'可用':'不可用'}}</text>
+                        <text> X{{item.unused}}</text>
+                      
+                       </view>
+                   </view>
+                 </view>
+  
+            </view> 
+            <view wx:if="{{theSingleCouponCardListLength==0}}">
+                暂无优惠券可用
+            </view>
+
+         </view>
+
+        <!-- -------------------------------- -->
+        <!-- 不可用优惠券 -->
+              <!-- <view class="wrapCashCouponCardDiv">
+                  <text class="userfulCashCouponTitle">不可用优惠券</text>
+                  <view class="WrapCouponCardDemo" wx:for="{{theUserCommonCouponCard}}" wx:key="*this"> -->
+                      <!-- 现金券模型 -->
+                      <!-- <view class="CashCouponCardDemo CashCouponCardDemo2">
+                        <view class="CashCouponCardDemoLeft CashCouponCardDemoLeft2">
+                          <text class="leftChinaIcon">￥</text>
+                          <text class="rightNumberText">
+                                <text class="ffText1">{{item.price}}</text>
+                                <text class="ffText2">满{{item.fullless}}</text>
+                          </text>
+                        </view>
+                        <view class="CashCouponCardDemoRight">
+                            <text class="CashCouponText1">全场通用</text>
+                            <text class="CashCouponText2">2019.05.05-02019.07.07</text>
+                            <view class="CashCouponText3">X10</view>
+                        </view>
+                      </view> -->
+                      <!-- 现金券模型 -->
+                      <!-- <view class="CashCouponCardDemo CashCouponCardDemo2">
+                        <view class="CashCouponCardDemoLeft CashCouponCardDemoLeft2">
+                          <text class="leftChinaIcon">￥</text>
+                          <text class="rightNumberText">
+                                <text class="ffText1">70</text>
+                                <text class="ffText2">满300</text>
+                          </text>
+                        </view>
+                        <view class="CashCouponCardDemoRight">
+                            <text class="CashCouponText1">全场通用</text>
+                            <text class="CashCouponText2">2019.05.05-02019.07.07</text>
+                            <view class="CashCouponText3">X10</view>
+                        </view>
+                      </view>
+                    -->
+                  <!-- </view>               
+              </view> -->
+          <!-- -------------------------------- -->
+         
+       </view>
+    
+   </view>
+   
+
+
+
+
+<!-- --------------------------------以上是券的处理 --------------------------------->
+
+
+   
+
+    <view class="wrapconfirmPage">
+      <view class="confirmPagePartTitle">
+         <!-- <view class="{{activeFlag==1?'activeClassStyle':'normalClassStyle'}}" bindtap="chooseway1">门店自提</view>
+         <view class="{{activeFlag==2?'activeClassStyle':'normalClassStyle'}}" bindtap="chooseway2">物流配送</view> -->
+                  <!-- <view class="{{activeFlag==1?'activeClassStyle':'normalClassStyle'}}" bindtap="chooseway1">门店自提</view> -->
+             <!-- <view bindtap="chooseway1" style="background:#5dccd3;color:#fff;"bindtap="chooseway1">门店自提</view> -->
+                  <navigator url="../storeSelfWay/storeSelfWay?theOrderId={{theOrderId}}" delta="10" hover-class="activeClassStyle" open-type='redirect' class="storeSelfWayClass">门店自提</navigator>
+                <navigator delta="10" url="../deliveryWay/deliveryWay?theOrderId={{theOrderId}}" hover-class="activeClassStyle" open-type='redirect' class="deliveryWayClass">物流配送
+                    </navigator>
+               
+
+       </view>
+ 
+      
+      
+      <view class="mapContent" bindtap="showMap">
+               <view class="mapTitle">{{hariShopBasicMessage.title}}</view>       
+
+          <map
+              id="map"
+              longitude="{{hariShopBasicMessage.lng}}"
+              latitude="{{hariShopBasicMessage.lat}}"
+              scale="18"
+              controls="{{controls}}"
+              bindcontroltap="controltap"
+              markers="{{markers}}"
+              bindmarkertap="markertap"
+              polyline="{{polyline}}"
+              bindregionchange="regionchange"
+              show-location
+              style="width:92%;margin:0 auto;height:210rpx;"
+            ></map>
+
+            <view class="mapResultText">
+               <view class="mapResultTextImg">
+                   <image src="../../../images/locationIcon.png"></image>
+               </view>
+               <view class="mapResultTextText">
+                   <text>{{hariShopBasicMessage.address}}...</text>
+               </view>
+            </view>
+
+            <view class="contactpartText">
+                <view class="contactpartText1">
+                  <image src="../../../images/h-33.png"></image>
+                </view>
+                <view class="contactpartText2">
+                   <text class="textColor0">{{hariShopBasicMessage.tel}} </text>
+                   <text class="textColor1">(营业时间{{hariShopBasicMessage.opentime}})</text> 
+                </view>
+            </view>
+
+
+
+      </view>
+
+      <view class="kafanProductPart">
+           <view class="kafanProductPartInner">
+
+<!-- ------------------------------------------------------------------------ -->
+                   <!-- 真的模型1 -->
+             <view class="realModal" wx:for="{{newallPayList}}" wx:key="*this">
+                  <!-- 模型1 -->
+                  <view class="kafanProductPartSamplae">
+                    <view class="kafanSamplaeLeft">
+                      <image src="{{item.optionsinfo.thumb}}"></image>              
+                    </view>
+                    <view class="kafanSamplaeMiddle">
+                        <!-- <button disabled='{{state==index?true:""}}' class="kafanSamMiText3-2 kafanSamMiText3-31" bindtap="chooseSingleCoupon" data-danpinprice="{{item.price}}" data-index="{{index}}" data-delievenum="{{item.num}}" data-state='{{index}}' data-optionid="{{item.optionsinfo.id}}">
+                            {{state==index?keChangeText:"点此选择单品券优惠"}}
+                         </button> -->
+
+                         <button   class="kafanSamMiText3-2 kafanSamMiText3-31" bindtap="chooseSingleCoupon" data-danpinprice="{{item.price}}"     data-index="{{index}}"   disabled="{{newallPayList[index].flag}}" data-delievenum="{{item.num}}" data-state='{{index}}' data-optionid="{{item.optionsinfo.id}}">
+                            {{state==index?keChangeText:"选择单品券优惠"}}
+                         </button>
+                         
+
+                      <text class="kafanSamMiText1">{{item.goodsinfo.title}}</text>
+                      <text class="kafanSamMiText2">{{item.optionsinfo.optiontitle}}</text>
+                      <text class="kafanSamMiText3">
+                        <text class="kafanSamMiText3-1">￥</text>
+                        <text class="kafanSamMiText3-2">{{item.price}}</text>                              
+                      </text>
+                    </view>
+                    <view class="kafanSamplaeRight">
+                      X{{item.num}}
+                    </view>
+                  </view>
+                        <!-- 模型1--赠品 -->
+                  <view class="kafanProductPartSamplae" wx:key="unique" wx:for="{{item.gift}}" wx:for-item="subItem">
+                    <view class="kafanSamplaeLeft zenpinkafanSamplaeLeft">
+                      <image src="{{subItem.optionsinfo.thumb}}"></image>              
+                    </view>
+                    <view class="kafanSamplaeMiddle">
+                      <text class="kafanSamMiText1">{{subItem.goodsinfo.title}}</text>
+                      <text class="kafanSamMiText2">{{subItem.optionsinfo.optiontitle}}</text>
+                      <text class="kafanSamMiText3">
+                        <text class="kafanSamMiText3-1">￥</text>
+                        <text class="kafanSamMiText3-2">0</text>
+                      </text>
+                    </view>
+                    <view class="kafanSamplaeRight">
+                      X{{subItem.num}}
+                    </view>
+                  </view>
+              </view>
+
+
+<!-- ------------------------------------------------------------------------ -->
+                <!-- 模型1 -->
+                <!-- <view class="kafanProductPartSamplae">
+                  <view class="kafanSamplaeLeft">
+                    <image src="../../../images/h-32.png"></image>              
+                  </view>
+                  <view class="kafanSamplaeMiddle">
+                    <text class="kafanSamMiText1">CAVINE去屑净化洗发露</text>
+                    <text class="kafanSamMiText2">容量:258ml</text>
+                    <text class="kafanSamMiText3">
+                      <text class="kafanSamMiText3-1">￥</text>
+                      <text class="kafanSamMiText3-2">258</text>
+                    </text>
+                  </view>
+                  <view class="kafanSamplaeRight">
+                    X1
+                  </view>
+                </view> -->
+             
+
+              <view class="countTheMoney">
+                  <view class="countTheMoney1" bindtap="printTheConsole">
+                    <text class="countTheMoney1-1">商品通用券</text>
+                    <text class="countTheMoney1-2">全场现金券不能与指定产品券叠加</text>
+                  </view>
+                  <view class="countTheMoney2">
+                     <text class="countTheMoney2-1">现金券</text>
+                     <text class="countTheMoney2-2" bindtap="showThehidden">{{theCommonUseCouponPrice}}</text>
+                  </view>
+                  <view class="countTheMoneyLine"></view>
+                  <view class="countTheMoney3">
+                     <text class="countTheMoney3-1">最高可优惠</text>
+                     <text class="countTheMoney3-2">￥</text>
+                     <text class="countTheMoney3-3">{{theRecommondFavourableWay==1?mycouponprice:mygoodscouponprice}}(推荐-方式是{{theRecommondFavourableWay==1?'全场券方式':'单品券方式'}})</text>
+                     <!-- <text style='color:#00d3c2;margin-left:10rpx;font-size:28rpx;'>推荐方式:{{theRecommondFavourableWay==1?'全场券':'单品券'}}</text> -->
+                     <text bindtap="chooseUseCommonWay" class="chooseMyOwnWayCommon">{{keChangeText2}}</text>
+                  </view>
+              </view>
+
+              <!-- 选择支付方式 -->
+                <view class="chooseWayPart">
+                     <view class="wrappayway">
+                        <view class="waymodal" wx:for="{{payList}}" wx:key="key">
+                          <view class="waymodalLeft">
+                            <image src="{{item.paywayImg}}"></image>
+                            <text class="paywayText">{{item.paywayText1}}</text>
+                            <text class="paywayText addpaywayText" wx-if="{{item.payway==2}}">账户余额:{{remainingSum}}</text>
+                          </view>
+                          <view class="waymodalRight">
+                              <icon  bindtap="choosePayWayItem" data-state2="{{index}}" type="{{state2==index?'success':'circle'}}"></icon>
+                          </view>
+                        </view>
+                      </view>
+                   
+                </view>
+
+                
+           </view>
+      
+      </view>
+  
+    </view>
+    <!-- 结算总额 -->
+
+      <view class="countTotalMonay">
+         <view class="countTotalMonayInner">
+            <view class="countTotalInnerLeft">
+                <text class="countTotaLeft-1">合计</text>
+                <!-- <text class="countTotaLeft-2">￥{{theRecommondFavourableWay==1?((nopreferPrice-mycouponprice)):(nopreferPrice-mygoodscouponprice)}}</text> -->
+                <text class="countTotaLeft-2">{{afterPreferToPay}}</text>
+                     <text class="countTotaLeft-2"></text>
+                <!-- <text class="countTotaLeft-3">已优惠￥{{theRecommondFavourableWay==1? mycouponprice:mygoodscouponprice}}</text> -->
+                <text class="countTotaLeft-3">已优惠￥{{allfavarableMoney}}</text>
+            </view>
+            <view class="countTotalInnerRight" bindtap='gotopayTheMoney'>提交订单</view>
+         </view>
+      </view>
+
+</view>

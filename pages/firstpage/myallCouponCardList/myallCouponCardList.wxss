@@ -1,0 +1,395 @@
+/* pages/firstpage/myallCouponCardList/myallCouponCardList.wxss */
+@import '../paySuccess/paySuccess.wxss';
+
+@import '../storeSelfWay/storeSelfWay.wxss';
+
+page
+{
+  background:#f0f0f0;
+}
+.myAllCounponCartListInner
+{
+ margin-left:50rpx;
+ margin-right:50rpx;
+  background:#f0f0f0;
+}
+.listNavTitle
+{
+  width:100%;
+  height:76rpx;
+  margin-top:40rpx;
+  background:#f0f0f0;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+}
+.navView
+{
+  font-size:32rpx;
+}
+.wrapRespectiveContent
+{
+  height:auto;
+  /* background:red; */
+  width:100%;
+}
+.default{line-height:76rpx;text-align:center;flex:1;border-right:none;color:#333;font-size:28rpx;}
+.red{line-height:76rpx;text-align:center;color:#5BDDDB;flex:1;border-right:none; border-bottom: 4rpx solid #5BDDDB;font-size:28rpx;
+}
+.show
+{
+  display:block;
+  /* text-align:center; */
+}
+.hidden{
+ display:none;
+ /* text-align:center; */
+}
+.unuseContentInner,.usedContentInner,.expiredContentInner
+{
+  margin-top:30rpx;
+}
+.respectiveCartBonus
+{
+ border-top:none!important;
+}
+.CashCouponCardDemo2
+{
+  background:#9a9a9a!important;
+}
+.CashCouponCardDemoLeft2
+{
+  background:#9a9a9a;
+}
+.addlineShowView
+{
+  position:relative;
+  top:-72rpx;
+}
+.CashCouponCardDemo2:before
+{
+  left: -10px;
+  background-color:transparent;
+  background-position: 100% 35%;
+  background-image: linear-gradient(-45deg, #9a9a9a 25%, transparent 25%, transparent), 
+                  linear-gradient(-135deg, #9a9a9a 25%, transparent 25%, transparent), 
+                  linear-gradient(-45deg, transparent 75%, #9a9a9a 75%), 
+                  linear-gradient(-135deg, transparent 75%, #9a9a9a 75%);
+}
+.addmyCashText3InnBtn1
+{
+ color:rgba(0,0,0,0.66);
+ border:none;
+width:144rpx;
+ border:1px solid rgba(0,0,0,0.66);
+}
+.addmyCashText3InnBtn2
+{
+  color:rgba(0,0,0,0.66);
+   border:none;
+   font-size:28rpx;
+  width:144rpx;
+  border:1px solid rgba(0,0,0,0.66);
+}
+.serviceCashCardSample2
+{
+ background:#a1a1a1;
+}
+.serviceCashCardSample2:before {
+ 
+  background-image: linear-gradient(-45deg, #a1a1a1 25%, transparent 25%, transparent), 
+                  linear-gradient(-135deg, #a1a1a1 25%, transparent 25%, transparent), 
+                  linear-gradient(-45deg, transparent 75%, #a1a1a1 75%), 
+                  linear-gradient(-135deg, transparent 75%, #a1a1a1 75%);
+}
+.serviceCardSampleInner2
+{
+background:#a1a1a1;
+border-color:#a1a1a1;
+}
+.addabsoluteElement1
+{
+  border-color:#666;
+  color:#666;
+}
+.addabsoluteElement2{
+     border-color:#666;
+  color:#666;
+}
+
+.circleIconShow
+{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  background:transparent;
+  border:1px solid #a1a1a1;
+  position:absolute;
+  z-index:100;
+  text-align:center;
+  top:5px;
+  left:110rpx;
+}
+.circleIconShowInner
+{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  margin-top:10px;
+  margin:15px auto;
+  position:relative;
+  border:1px solid #a1a1a1;
+}
+
+.expiredIcon
+{
+  width:100px;
+  height:18px;
+  position:absolute;
+  top:30px;
+  background:transparent;
+  left:-10px;
+  color:#a1a1a1;
+  transform:rotate(-45deg);
+  font-size:13px;
+  border:1px solid #a1a1a1;
+  border-radius:10px;
+}
+.showShareModal
+{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:100;
+  right:0;
+  background:rgba(0,0,0,0.7);
+}
+.showShareModalInner
+{
+  width:100%;
+  height:220rpx;
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  justify-content:center;
+  border-top-left-radius:40rpx;
+  border-top-right-radius:40rpx;
+  }
+  .shareImgText
+  {
+    font-size:26rpx;
+    margin-top:10rpx;
+  }
+  .showShareModalInner image
+  {
+    width:98rpx;
+    height:98rpx;
+  }
+  .respectiveShareProduct
+  { 
+    background:#f0f0f0;
+    position:fixed;
+    height:490rpx;
+    width:72%;
+    left:14%;
+    margin:0 auto;
+    box-sizing:border-box;
+    bottom:160px;
+  }
+  .shareProductTop
+  {
+    width:100%;
+    height:170rpx;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    background:#f0f0f0;
+  }
+  .shareProductTopLeft
+  {
+   flex:1;
+   /* background:red; */
+   height:170rpx;
+  }
+  .shareProductTopLeft image
+  {
+    width:84rpx;
+    height:84rpx;
+    margin-top:30rpx;
+    margin-left:30rpx;
+  }
+  .shareProductTopRight
+  {
+    flex:3;
+    height:170rpx;
+    display:flex;
+   flex-direction:column;
+    font-size:30rpx;
+    color:rgba(0,0,0,0.36);
+  }
+  .WrapCashCouponCardDemo
+  {
+    width:93%;
+    margin:0 auto;
+    margin-left:4%;
+    margin-right:3%;
+  }
+  .shareTitle
+  {
+    margin-top:30rpx;
+    margin-bottom:10rpx;
+    font-size:24rpx;
+  }
+  .shareMessage textarea{
+    width:90%;
+    font-size:12px;
+    text-indent:20rpx;
+    padding-top:20rpx;
+    height:60rpx;
+    border:1px solid rgba(0,0,0,0.16);
+  }
+  .addAnotherCashCouponText3
+  {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-end;
+  }
+  .countNumWWWPart
+  {
+    width:40rpx;
+    height:40rpx;
+    background:#eee;
+    text-align:center;
+    line-height:40rpx;
+    margin-left:10rpx;
+    border-radius:15rpx;
+  }
+  .fetchSoonView
+  {
+    font-size:26rpx;
+    background:#5BDDDB;
+    color:#fff;
+    width:60%;
+    height:44rpx;
+    line-height:44rpx;
+    text-align:center;
+    margin:40rpx auto;
+    border-radius:10rpx;
+  }
+  .closeTheshowShareModal
+  {
+    width:60rpx;
+    height:60rpx;
+    background:#fff;
+    border-radius:50%;
+    position:absolute;
+    left:50%;
+    text-align:center;
+    bottom:-30rpx;
+    margin-left:-30rpx;
+  }
+  .closeTheshowShareModal image{
+    width:36rpx;
+    height:36rpx;
+    margin-top:12rpx;
+  }
+  .shareCashCouponCardDemo
+  {
+    background:#f67A96;
+  }
+  .shareCashCardDemoInner
+  {
+    border:2px solid #5BDDDB;
+    height:100%;
+    box-sizing:border-box;
+  }
+  .computeNumberIcon
+  {
+    width:100%;
+    height:80rpx;
+    font-size:28rpx;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-end;
+  }
+  .commonStyleIcon
+  {
+    width:42rpx;
+    height:42rpx;
+    background:#e0e0e0;
+    color:#333;
+    margin-right:10rpx;
+    border-radius:10rpx;
+    line-height:42rpx;
+    text-align:center;
+  }
+  .clearBack
+  {
+    /* background:#fff; */
+    
+  }
+  .akklineShowView
+  {
+    /* position:relative;
+    top:-20rpx; */
+  }
+  .addcountNumView
+  {
+    position:relative;
+    top:30rpx;
+  }
+  .vvcountNumView
+  {
+    margin-top:-30rpx;
+  }
+  .vvcountNumView2
+  {
+    margin-top:10rpx;
+  }
+  .wwlineShowView
+  {
+    margin-top:-15rpx;
+  }
+  .hhabsoluteElement3
+  {
+   position:absolute;
+   top:24rpx;
+   left:10rpx;
+  }
+  .qqlineShowView
+  {
+    margin-top:-40rpx;
+  }
+  .cccountNumView
+  {
+    margin-top:-24rpx;
+  }
+  .oolineShowView
+  {
+    margin-top:-40rpx;
+  }
+  .nnabsoluteElement
+  {
+    position:absolute;
+    left:0px;
+    bottom:0px;
+    font-size:26rpx;
+    color:#9a9a9a;
+  }
+  .yylineShowView
+  {
+    margin-top:-45rpx;
+  }
+  .wwlineShowView
+  {
+    margin-top:-40rpx;
+  }

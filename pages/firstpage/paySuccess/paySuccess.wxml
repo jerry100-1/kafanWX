@@ -1,0 +1,315 @@
+<view>
+
+   <view class="wrapTheState">
+      <view class="stateCtnView1">
+        <view class="stateCtnView1-1">
+          <image src="../../../images/h-40.png"></image>
+        </view>
+        <view class="stateCtnView1-2">
+           <text class="stateCtnView1-2-1">支付成功</text>
+           <text class="stateCtnView1-2-2">实付金额￥{{yourallpaymoney}}</text>
+        </view>
+      </view>
+      <view class="stateCtnView2">
+          <view class="stateCtnView2-1" catchtap='gotoMyAllOrder'>查看订单</view>
+          <view class="stateCtnView2-2" catchtap='gotoMyAllCoupon'>查看优惠券</view>
+      </view>
+   </view>
+
+
+   <view class="successBonusCard" wx:if="{{yourallcouponnum}}">
+     <text class="successBonusCard1">恭喜您获得门店现金券</text>
+     <text class="successBonusCard2">{{yourallcouponnum}}张共省{{yourcouponsprice}}元</text>
+   </view>
+    <view class="successBonusCard" wx:if="{{!yourallcouponnum}}">
+     <text class="successBonusCard1">暂无优惠券哦</text>
+   </view>
+
+   <view class="respectiveCartBonus">
+       <!-- 商品现金券部分 -->
+       <view class="respectiveCartBonusTitle">商品现金券</view>
+        <!-- 商品现金券列表 -->
+       <view class="wrapAllCardList" wx:if="{{allSeriesTypeCard}}">
+           <view class="cashVouncherSample">
+              <!-- ------------------------- -->
+
+              <view class="WrapCouponCardDemo">
+                  <!-- 通用券模型 -->
+                  <view class="CashCouponCardDemo" wx:if="{{item.type===1}}"  wx:for="{{allSeriesTypeCard}}" wx:key="key">
+                        <view class="CashCouponCardDemoLeft">
+                          <text class="leftChinaIcon">￥</text>
+                          <text class="rightNumberText">
+                                <text class="ffText1">{{item.price}}</text>
+                                <text class="ffText2">满{{item.fullless}}</text>
+                          </text>
+                        </view>
+                        <view class="CashCouponCardDemoRight">
+                            <text class="CashCouponText1">{{item.title}}</text>
+                            <text class="CashCouponText2">{{item.starttime.datetime}}-{{item.endtime.datetime}}</text>
+                            <view class="CashCouponText3 myCashCouponText3">
+                              <view class="myCashText3InnBtn1">
+                                立即使用
+                              </view>
+                              <view class="myCashText3InnBtn2">
+                                立即分享
+                              </view>
+                            </view>
+                              <!-- 线条 -->
+                            <view class="lineShowView"></view>
+                              <!-- 数量 -->
+                              <view class="countNumView">X{{item.total}}</view>
+                        </view>
+                  </view>
+
+                  <!-- 单品券模型 -->
+                  <view class="CashCouponCardDemo" wx:if="{{item.type===2}}"  wx:for="{{allSeriesTypeCard}}" wx:key="key">
+                        <view class="CashCouponCardDemoLeft">
+                          <text class="leftChinaIcon">￥</text>
+                          <text class="rightNumberText">
+                                <text class="ffText1">{{item.price}}</text>
+                                <text class="ffText2">满{{item.fullless}}</text>
+                          </text>
+                        </view>
+                        <view class="CashCouponCardDemoRight">
+                            <text class="CashCouponText1">{{item.title}}</text>
+                            <text                  class="CashCouponText2">{{item.starttime.datetime}}-{{item.endtime.datetime}}</text>
+                            <view class="CashCouponText3 myCashCouponText3">
+                              <view class="myCashText3InnBtn1">
+                                立即使用
+                              </view>
+                              <view class="myCashText3InnBtn2">
+                                立即分享
+                              </view>
+                            </view>
+                              <!-- 线条 -->
+                            <view class="lineShowView"></view>
+                              <!-- 数量 -->
+                              <view class="countNumView">X{{item.total}}</view>
+                        </view>
+                  </view>  
+
+              </view>
+
+
+             <!-- ------------------------------- -->
+           </view>
+       </view>  
+         <!-- 服务现金券部分  -->
+       <view class="respectiveCartBonusTitle">服务现金券</view>
+         <!-- 服务现金券列表 -->
+       <view class="wrapAllServiceCashCard" wx:if="{{allSeriesTypeCard}}">
+                <!-- 服务现金券模型 -->
+               <view class="serviceCashCardSample" wx:if="{{item.type===3}}" wx:for="{{allSeriesTypeCard}}" wx:key="key">
+                 <view class="serviceCardSampleInner" style='background:url({{item.thumb}})'>
+                     <view class="countNumText">X{{item.total}}</view>
+                     <view class="absoluteElement1">立即使用</view>
+                     <view class="absoluteElement2">立即分享</view>
+
+                     <view class="absoluteElement3">{{item.starttime.datetime}}-{{item.endtime.datetime}}</view>
+                     <!-- <image class="cashimg" src="{{item.thumb}}"></image> -->
+                 </view>
+               </view>
+        
+            
+       </view>
+
+
+   </view>
+
+   <!-- 弹出框1 -->
+   <view class="shopCashVouncherContainer" wx:if="{{hidden}}">
+     <view class="shopCashVouncherContainerInner">
+    <!-- ---------------------------------------------- -->
+      <view class="successBonusCard addsuccessBonusCard">
+            <text class="successBonusCard1" id="addsuccessBonusCard1">恭喜您获得门店现金券</text>
+            <text class="successBonusCard2" id="addsuccessBonusCard2">10张共省2500元</text>
+      </view>
+
+        <view class="respectiveCartBonus newrespectiveCartBonus">
+            <!-- 商品现金券部分 -->
+            <view class="respectiveCartBonusTitle addrespectiveCartBonusTitle">商品现金券</view>
+              <!-- 商品现金券列表 -->
+            <view class="wrapAllCardList">
+                <view class="cashVouncherSample">
+                    <!-- ------------------------- -->
+
+                    <view class="WrapCouponCardDemo">
+                        <!-- 现金券模型 -->
+                        <view class="CashCouponCardDemo">
+                          <view class="CashCouponCardDemoLeft">
+                            <text class="leftChinaIcon">￥</text>
+                            <text class="rightNumberText">
+                                  <text class="ffText1">70</text>
+                                  <text class="ffText2">满300</text>
+                            </text>
+                          </view>
+                          <view class="CashCouponCardDemoRight">
+                              <text class="CashCouponText1">全场通用</text>
+                              <text                  class="CashCouponText2">2019.05.05-02019.07.07</text>
+                              <view class="CashCouponText3 myCashCouponText3">
+                                <view class="myCashText3InnBtn1">
+                                  立即使用
+                                </view>
+                                <view class="myCashText3InnBtn2">
+                                  立即分享
+                                </view>
+                              </view>
+                                <!-- 线条 -->
+                              <view class="lineShowView"></view>
+                                <!-- 数量 -->
+                                <view class="countNumView">X10</view>
+                          </view>
+
+                      
+
+                        </view>   
+
+                        <!-- 现金券模型 -->
+                        <view class="CashCouponCardDemo">
+                          <view class="CashCouponCardDemoLeft">
+                            <text class="leftChinaIcon">￥</text>
+                            <text class="rightNumberText">
+                                  <text class="ffText1">70</text>
+                                  <text class="ffText2">满300</text>
+                            </text>
+                          </view>
+                          <view class="CashCouponCardDemoRight">
+                              <text class="CashCouponText1">全场通用</text>
+                              <text                  class="CashCouponText2">2019.05.05-02019.07.07</text>
+                              <view class="CashCouponText3 myCashCouponText3">
+                                <view class="myCashText3InnBtn1">
+                                  立即使用
+                                </view>
+                                <view class="myCashText3InnBtn2">
+                                  立即分享
+                                </view>
+                              </view>
+                                <!-- 线条 -->
+                              <view class="lineShowView"></view>
+                                <!-- 数量 -->
+                                <view class="countNumView">X10</view>
+                          </view>
+
+                      
+
+                        </view>   
+
+                    </view>
+
+
+                  <!-- ------------------------------- -->
+                </view>
+            </view>  
+              <!-- 服务现金券部分  -->
+            <view class="respectiveCartBonusTitle">服务现金券</view>
+              <!-- 服务现金券列表 -->
+            <view class="wrapAllServiceCashCard">
+                      <!-- 服务现金券模型 -->
+                    <view class="serviceCashCardSample">
+                      <view class="serviceCardSampleInner">
+                          <view class="countNumText">X1</view>
+                          <view class="absoluteElement1">立即使用</view>
+                          <view class="absoluteElement2">立即分享</view>
+                        
+                      </view>
+                    </view>
+                      <!-- 服务现金券模型 -->
+                    <view class="serviceCashCardSample">
+                      <view class="serviceCardSampleInner">
+                          <view class="countNumText">X1</view>
+                          <view class="absoluteElement1">立即使用</view>
+                          <view class="absoluteElement2">立即分享</view>
+                        
+                      </view>
+                    </view>
+                    
+            </view>
+
+
+        </view>
+              
+         <!-- 关闭弹窗      -->
+        <view class="closeRadius" catchtap='closeTheModal'>
+          <image src="../../../images/h-41.png"></image>
+        </view>
+     
+     <!-- --------------------------------------------- -->
+     </view>
+   </view>
+
+    <!-- 弹出框2 -->
+
+   <view class="luckyProductModalContainer" wx:if="{{hidden2}}">
+        <view class="luckyProductModalContainerInner">
+            <view class="luckyProductElement1">恭喜您满8次护理</view>
+            <view class="luckyProductElement2">送价值99元靓纯护发精油                  </view>
+
+          <!-- ---------------------------- -->
+            <view class="giftCardSample">
+              <view class="giftCardSampleTop">
+                  <view class="wrapTopLineVertical">
+                      <view class="topLineVertical">
+                        <view>1</view>
+                        <view class="raiusCircle"></view>
+                      </view>
+                     <view class="topLineVertical">
+                         <view>2</view>
+                        <view class="raiusCircle"></view>
+                      </view>
+                       <view class="topLineVertical">
+                         <view>3</view>
+                        <view class="raiusCircle"></view>
+                      </view>
+                      <view class="topLineVertical">
+                         <view>4</view>
+                        <view class="raiusCircle"></view>
+                      </view>
+                      <view class="topLineVertical">
+                        <view>5</view>
+                        <view class="raiusCircle"></view>
+                      </view>
+                      <view class="topLineVertical">
+                         <view>6</view>
+                        <view class="raiusCircle"></view>
+                      </view>
+                      <view class="topLineVertical">
+                        <view>7</view>
+                        <view class="raiusCircle"></view>
+                      </view>
+                      <view class="topLineVertical">
+                         <view>8</view>
+                        <view class="raiusCircle"></view>
+                      </view>
+                 </view>
+
+                 <view class="cardSeriesTitle">护理卡</view>
+                
+              </view>
+              <view class="giftCardSampleBottom">
+                 <view class="giftSampleBottom1">
+                   <text class="giftSampleBottom1-1">完成8次护理送价值99元</text> 
+                   <text class="giftSampleBottom1-2">靓纯护发精油</text>
+                 </view>
+
+                 <view class="giftSampleBottom2">
+                   有效期:  2019.2.21至2019.3.21
+                 </view>
+              </view>
+            </view>
+      
+          <!-- ---------------------------- -->
+            <!-- 关闭弹窗      -->
+        <view class="closeRadius2" catchtap='closeTheModal2'>
+          <image src="../../../images/h-41.png"></image>
+        </view>
+     
+
+        
+        </view>
+   </view>
+
+
+
+
+
+</view>

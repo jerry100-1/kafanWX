@@ -1,0 +1,33 @@
+/* pages/login/login.wxss */
+.wrapallmo
+{
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  /* background:red; */
+  position:fixed;
+  left:0px;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  z-index:100;
+}
+.getPhBtn
+{
+  position:fixed;
+  left:0px;
+
+  z-index:100;
+}
+.getPhBtn
+{
+  position:fixed;
+  left:0px;
+  width:90%;
+  height:40px;
+  top:0px;
+  background:#00d3c2; 
+  right:0px;
+  bottom:0px;
+  z-index:100;
+}

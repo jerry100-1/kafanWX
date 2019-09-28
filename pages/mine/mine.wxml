@@ -1,0 +1,141 @@
+<import src="../template/template.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+<!-- <import src="../firstpage/productsampleTemplate/productsampleTemplate.wxml"/> -->
+<view class="wrapminepage">
+   <view class="minepageheader">
+     <view class="headimg">
+       <image src="../../images/cneoid26.png"></image>
+     </view>
+
+     <view class="wraploginAndEaring">
+        <view class="bigCircle" bindtap='gotoFirstPage'>
+           <image src="{{userAvatar}}"></image>
+           <text>{{nickName}}</text>
+        </view>
+        <view class="clickToLogin">个人信息</view>
+        <view class="moneypart">
+           <view class="moneypartLeft">
+               <view class="moneypartLeft1">  
+                 <text class="moneypartLeft1-1">￥</text>
+                 <text class="moneypartLeft1-2">{{mycredit2}}</text>
+               </view>
+               <view class="moneypartLeft2">账户余额</view>
+           </view>
+           <view class="moneypartRight">
+                <view class="moneypartRight1">  
+                  <text class="moneypartRight1-1">￥</text>
+                  <text class="moneypartRight1-2">{{mycommission}}</text>
+                </view>
+                <view class="moneypartRight2">累计收入</view>
+           </view>
+         
+        </view>
+
+           <view class="cardAndMember">
+             <view class="cardAndMemberLeft">
+                 <view class="moneypartLeft1">  
+                 <text class="moneypartLeft1-1 addmoneypartLeft1-1">￥</text>
+                 <text class="moneypartLeft1-2 addmoneypartLeft1-2">{{mycouponprice}}</text>
+               </view> 
+               <view class="moneypartLeft2 addmoneypartLeft2">未使用优惠</view>
+             </view>
+             <view class="cardAndMemberRight">
+                   <view class="moneypartRight1">  
+                      <text class="moneypartRight1-1 addmoneypartRight1-1"></text>
+                      <text class="moneypartRight1-2 addmoneypartRight1-2">{{mysubmember}}</text>
+                  </view>
+                  <view class="moneypartRight2 addmoneypartRight2">我的会员</view>     
+             
+             
+             </view>
+           </view>
+
+
+     </view>
+
+   </view>
+   <view class="secondpart">
+      <view class="secondpartItem" bindtap='goMyAllOrder'>
+         <image class="secondpartItemImg" src="../../images/cneoid27.png"></image>
+         <text  class="secondpartItemText">待付款</text>
+         <text class="numberOfOrder">{{waitpayorderNum}}</text>
+
+      </view>
+      <view class="secondpartItem" bindtap='goMyShipOrder'>
+         <image  class="secondpartItemImg" src="../../images/cneoid27.png"></image>
+         <text class="secondpartItemText">待发货</text>
+      </view>
+      <view class="secondpartItem" bindtap='goMyConfirmOrder'>
+         <image  class="secondpartItemImg" src="../../images/cneoid27.png"></image>
+         <text class="secondpartItemText">待确认</text>
+      </view> 
+   </view>
+
+    <view class="wrapRecommendCtn">
+       <view class="recommendCtnTitle">
+        为您推荐
+       </view>
+<!--      
+ 
+          <block>
+              <template is="productSample"> </template>
+             
+          </block>    -->
+<!-- 
+ ------------------------------------------------------------------------- -->
+
+        <view class="productsample"   name="productSample">                                                 
+                <view class="bottomlineView"></view>
+                <view class="hpcontBox" style='flex-wrap:wrap;'>
+                      <!-- 模型1 -->
+                      <view class="hpcontLeftBox" wx:for="{{hotSellerGoodsList}}" wx:key="key" data-productid="{{item.goodsid}}" catchtap='goToProductDetail'>
+                          <view class="hpcontLeftBoxInner">
+                              <view class="hpcontLeftBoxInnerTop">
+                                  <image class="hpLeftBoxInImg1" src="{{item.thumb}}"></image>
+                                  <image class="hpLeftBoxInImg2"  src="../../images/h-8.png"></image>
+                                  <!-- <text  class="hpLeftBoxInText1">{{item.coupons.length>0?'返券':''}}</text> -->
+                                  <text  class="hpLeftBoxInText1" wx:if="{{item.coupons.length>0}}">返券</text>
+                                   <!-- <text  class="hpLeftBoxInText1" wx:if="{{item.coupons.length>0}}">{{showText}}</text>
+                                   <text  class="hpLeftBoxInText1" wx:else></text> -->
+                              </view>
+                              <view class="hpcontLeftBoxInnerBottom">
+                                    <view class="hpcoLxIerBmLeft">
+                                        <view>{{item.title}}</view>
+                                        <view class="kknnbg">
+                                          ￥<text class="kknnbg1 specialText">{{item.price}}</text>
+                                          <text class="kknnbg2">已售{{item.sales}}</text>
+                                        </view>
+                                    </view>
+                                    <view class="hpcoLxIerBmRight" >
+                                        <text class="buySoText">立即购买</text>
+                                    </view>
+                              </view>
+                          </view>
+                      
+                      </view>
+                
+
+                </view>
+
+
+
+              
+
+
+              <!-- 包裹以上内容 -->  
+        </view>
+      
+      
+
+
+      
+    
+
+    
+<!-- 
+ --------------------------------------------------------------------------------    -->
+    </view>
+
+
+
+</view>

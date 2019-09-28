@@ -1,0 +1,43 @@
+<view style='background:#f8f8f8;padding:40rpx'>
+  
+  <view class='header'>
+    <view class='header-t text-deal'>
+      {{data.storeinfo.title}}
+    </view>
+    <view class='header-m'>
+      <view class='header-m-l'>
+        <image src='{{data.storeinfo.thumb}}' class='img1'></image>
+      </view>
+      <view class='header-m-r'>
+        <view class='text-deal'>
+          {{data.couponinfo.title}}
+        </view>
+        <view class='text-deal1'>
+          优惠详情：{{data.couponinfo.description}}
+        </view>
+        <view>
+          满{{data.couponinfo.fullless}}减{{data.couponinfo.price}}
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class='section'>
+    <image src='../../../images/h-46.png' class='img3'></image>
+    <view class='section-box'>
+      <view class='section-1' style='color:#fff'>
+        可用{{data.unused}}张(有效期至{{data.endtime.date}})
+      </view>
+      <view class='section-2'>
+        向商家初始二维码核销
+      </view>
+      <view class='section-3'>
+        <image src='{{data.qrcode}}' class='img2'></image>
+      </view>
+      <view class='section-4'>
+        <text class='wz1'>与朋友分享(开发中)</text>
+      </view>
+    </view>
+  </view>
+
+</view>

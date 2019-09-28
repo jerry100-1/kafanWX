@@ -1,0 +1,236 @@
+<import src="../template/template.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+ 
+<!-- 以下是分享首页完整部分 ------------------------------------------------------------------------------------>
+
+  <!-- 以下是分享内容 -->
+     <view class="wrapShareCtn" wx:if="{{toggleShareFlag}}">
+
+              <!-- <view class="closeTheShare" style='z-index:90000!important'> -->
+                    <!-- <image src="../../images/h-41.png"></image> -->
+                    <!-- <button class="" catchtap="closeAllShareCtn">关闭</button> -->
+                <!-- </view>     -->
+              <!-- 分享的具体内容 -->
+              <view class="theShareImg" wx:if="{{hidden188}}">
+
+                   <image src="{{billchangeimage}}"></image>
+
+                   <text bindtap='closeAllShareCtn' class="closeTheModal">
+                      <!-- <image src="../../images/h-41.png"></image> -->
+                       X
+                   </text>
+              </view>
+            <!-- 关闭分享内容 -->
+              
+
+              <view class="shareCtnBottom">
+                        <view class="shareCtnBottomLeft" catchtap='shareTheBigImg'>
+                        <image class="shareCtnBottomLeft1" src="../../images/vjgigum8.png"></image>
+                        <button class="shareCtnBottomLeft2" open-type="share" disabled='{{disabled}}'  bindtap='shareTheBigImg2'  id="shareCtnBottomLeft2" style="border:none!important;background:#fff!important">分享图片</button> 
+                      </view>
+                      <view class="shareCtnBottomRight">
+                          <image  class="shareCtnBottomRight1" catchtap="saveMyImageToPhotosAlbum" src="../../images/vjgigum9.png"></image>
+                          <!-- <view class="shareCtnBottomRight2" catchtap='saveMyImageToPhotosAlbum' id="shareCtnBottomRight2" style="border:none!important;background:#fff!important">保存图片</view>  -->
+                                        <view class="shareCtnBottomRight2" catchtap='saveMyImageToPhotosAlbum' id="shareCtnBottomRight2" style="border:none!important;background:#fff!important">保存图片</view> 
+                          
+                      </view>
+              </view>
+     </view>  
+          <!-- 以上是分享内容 -->
+     <!-- 点击触发分享的按钮 -->
+     <view class="shareViewImg" catchtap="openShareCtnFun">
+           <image src="../../images/h-8.png"></image>
+     </view>
+
+
+
+
+<!-- 以上是分享首页完整部分------------------------------------------------------------------------------ -->
+
+
+ <!-- <view class="wrapShareCenter" wx:if="{{shareFlagOrNot}}">
+ 
+   <image class="mmnnimg1" src="{{firstpagehomeshareimgall}}"></image>
+   <image class="mmnnimg2" catchtap='closeTheModal' src="../../images/h-41.png"></image> 
+
+ </view> -->
+
+<view class="swiper-container">
+
+  <!-- 不显示指示点：indicator-dots='true' -->
+  <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+    <block wx:for="{{bannerImgList}}"  wx:key="unique">
+      <swiper-item  data-url="{{item.link}}">
+          <image wx:if="{{item.type==2}}" src="{{item.thumb}}" class="img"></image> 
+          <video wx:if="{{item.type==1}}" class="myVideo" src="{{item.thumb}}"  enable-danmu danmu-btn show-center-play-btn='{{true}}' autoplay="{{autoplay}}" show-play-btn="{{true}}" controls></video>      
+          <image wx:if="{{!item.type}}" src="../../../images/h-2.png" class="img"></image>
+      </swiper-item>
+
+       
+    </block>
+  </swiper>
+
+  <!-- 自定义指示点dot -->
+  <view class="dots">
+    <block wx:for="{{slider}}"  wx:key="unique">
+      <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+    </block>
+  </view>
+</view>
+
+
+<view class="homepart2">
+  <view class="part2box" bindtap='tovipqy'>
+     <image src="../../images/h-2.png"></image>
+     <text>会员权益</text>
+  </view>
+   <view class="part2box">
+      <image src="../../images/h-3.png"></image>
+      <text>秒杀</text>
+  </view>
+   <view class="part2box" bindtap='toshophd'>
+       <image src="../../images/h-4.png"></image>
+       <text>门店活动</text>
+  </view>
+   <view class="part2box" bindtap='totimecard'>
+        <image src="../../images/h-5.png"></image>
+        <text>次卡</text>
+  </view>
+   <view class="part2box">
+         <image src="../../images/h-6.png"></image>
+         <text>优惠券</text>
+  </view>
+  
+</view>
+
+<view class="homepart3">
+   <view class="homepart3-1">
+      <view class="homepart3-1Left">
+        <image src="../../images/h-7.png">
+        </image>
+      </view>
+      <view class="homepart3-1Right">
+           {{respectiveHour}}:{{respectiveMinute}}:{{respectiveSecond}}
+      </view>
+
+   </view>
+   <view class="homepage3-2">
+       <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width:100%">
+            
+            <!-- <view class="wrapAllSlideProduct" > -->
+                <!-- 模型1 -->
+                  <view  class="scroll-view-item_H" wx:for="{{sliderhotgoods}}" wx:key="unique">
+                     <view catchtap='goDetailPage' data-id="{{item.goodsid}}" >
+                            <view class="sviewItemInnerTop">
+                                <image src="{{item.thumb}}"></image>
+                            </view>
+                            <view class="sviewItemInnerBottom">
+                                <view class="sviewIInBoLeft">
+                                    <view class="mmText1">{{item.title}}</view>
+                                    <view>
+                                      <text class="mmText2">￥</text>
+                                      <text class="mmText3">{{item.price}}</text>
+                                    </view>
+                                </view>
+                                <view class="sviewIInBoRight">
+                                    <text class="buySoon" data-id="{{item.goodsid}}" bindtap='goDetailPage'>立即购买</text>
+                                </view>
+                            </view>
+                          </view>
+                  </view>
+    
+         
+        </scroll-view>
+   </view>
+</view>
+
+<view class="homepart4">
+    <view class="homepart4Title">全部商品</view> 
+
+    <view class="homepart4Content">
+        <!-- 模型1 -->
+        <view class="productsample">                                                 
+                <view class="bottomlineView"></view>
+                <!-- <view class="hpcontBox">
+                  <view class="hpcontLeftBox">
+                      <view class="hpcontLeftBoxInner">
+                          <view class="hpcontLeftBoxInnerTop">
+                              <image class="hpLeftBoxInImg1" src="../../images/h-17.png"></image>
+                              <image class="hpLeftBoxInImg2"  src="../../images/h-8.png"></image>
+                              <text class="hpLeftBoxInText1">返券</text>
+                          </view>
+                          <view class="hpcontLeftBoxInnerBottom">
+                                <view class="hpcoLxIerBmLeft">
+                                    <view>洗发升级</view>
+                                    <view class="kknnbg">
+                                      ￥<text class="kknnbg1 specialText">1</text>
+                                      <text class="kknnbg2">已售325</text>
+                                    </view>
+                                </view>
+                                <view class="hpcoLxIerBmRight">
+                                    <text class="buySoText">立即购买</text>
+                                </view>
+                          </view>
+                      </view>
+                  
+                  </view>
+                  <view class="hpcontRightBox">
+                        <view class="hpcontLeftBoxInner">
+                          <view class="hpcontLeftBoxInnerTop">
+                              <image class="hpLeftBoxInImg1" src="../../images/h-18.png"></image>
+                              <image class="hpLeftBoxInImg2"  src="../../images/h-8.png"></image>
+                              <text class="hpLeftBoxInText1">返券</text>
+                          </view>
+                          <view class="hpcontLeftBoxInnerBottom">
+                                <view class="hpcoLxIerBmLeft hpcoLxIerBmLeft1">
+                                    <view>丰盈健发洗发露</view>
+                                    <view class="kknnbg">
+                                      ￥ <text class="kknnbg1 specialText">365</text>
+                                      <text class="kknnbg2">已售325</text>
+                                    </view>
+                                </view>
+                                <view class="hpcoLxIerBmRight hpcoLxIerBmRigh1">
+                                    <text class="buySoText">立即购买</text>
+                                </view>
+                          </view>
+                      </view>
+                  
+                  </view>
+                </view>            -->
+                <view class="hpcontBox addhpcontBox">
+                    <!-- 模型1 -->
+                    <view   wx:for="{{hotgoods}}" wx:key="unique"  class="hpcontRightBox addhpcontRightBox">
+                        <view class="hpcontLeftBoxInner" catchtap='goDetailPage' data-id="{{item.goodsid}}">
+                          <view class="hpcontLeftBoxInnerTop">
+                              <image class="hpLeftBoxInImg1" src="{{item.thumb}}"></image>
+                              <image class="hpLeftBoxInImg2"  src="../../images/h-8.png"></image>
+                              <text class="hpLeftBoxInText1" wx:if="{{item.coupons.length>0}}">返券</text>
+                          </view>
+                          <view class="hpcontLeftBoxInnerBottom">
+                                <view class="hpcoLxIerBmLeft hpcoLxIerBmLeft1">
+                                    <view class="kknnbg0">{{item.title}}</view>
+                                    <view class="kknnbg">
+                                      ￥<text class="kknnbg1 specialText">{{item.price}}</text>
+                                      <text class="kknnbg2">已售{{item.sales}}</text>
+                                    </view>
+                                </view>
+                                <view class="hpcoLxIerBmRight hpcoLxIerBmRigh1">
+                                    <text class="buySoText">立即购买</text>
+                                </view>
+                          </view>
+                      </view>
+                  
+                    </view>
+                   
+
+                </view> 
+                
+
+              <!-- 包裹以上内容 -->  
+        </view>
+   
+
+    </view>
+
+</view>
+

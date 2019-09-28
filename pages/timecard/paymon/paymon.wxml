@@ -1,0 +1,48 @@
+<view>
+
+  <view class='header'>
+    <view class='header-t'>
+      <view>
+        <image src='../../../images/h-40.png' class='img1'></image>
+      </view>
+      <view>
+        <view>
+          支付成功
+        </view>
+        <view>
+          实付金额￥{{data1.price}}
+        </view>
+      </view>
+    </view>
+
+    <view class='header-b'>
+      <view >
+        <view class='wz1' style='margin-right:40rpx;' bindtap='ck'>
+          查看次卡
+        </view>
+      </view>
+      <view >
+        <view class='wz1' style='margin-left:40rpx;' bindtap='gw'>
+          继续购物
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='section'>
+    <view class='section-1'>
+      本次消费核销码
+    </view>
+
+    <view class='section-2'>
+      向商家出示二维码核销
+    </view>
+
+    <view class='section-3'>
+      <image src="{{data1.qrcode}}"></image>
+      <!-- <image src='http://saas.me/qrcode/63f26c2d63b4af441d39848dc3947061.jpg'></image> -->
+    </view>
+  </view>
+
+</view>

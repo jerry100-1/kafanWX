@@ -1,0 +1,116 @@
+/* pages/firstpage/productEvaluate/productEvaluate.wxss */
+page
+{
+  background:#f0f0f0;
+}
+.evaluate-recommendStrong
+{
+  margin-left:30rpx;
+  margin-right:30rpx;
+  position:relative;
+  background:#fff;
+  height:auto;
+  padding-top:10rpx;
+  padding-bottom:40rpx;
+  margin-top:20rpx;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+.firstLine
+{
+ margin-left:20rpx;
+ margin-top:20rpx;
+}
+.firstLine image
+{
+  width:56rpx;
+  height:56rpx;
+  display:inline-block;
+  vertical-align:bottom;
+}
+.firstLineText
+{
+  font-size:24rpx;
+  margin-left:10rpx;
+  display:inline-block;
+  vertical-align:bottom;
+}
+.secondLine
+{
+  font-size:24rpx;
+  margin-left:80rpx;
+  margin-top:15rpx;
+  letter-spacing:2px;
+}
+.thirdLine
+{
+  width:300rpx;
+  height:300rpx;
+  background:#f0f0f0;
+  margin-left:30rpx;
+  margin-top:20rpx;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.thirdLine image{
+  width:110rpx;
+  height:248rpx;
+}
+.recommendText
+{
+  font-size:26rpx;
+  color:#F64A56;
+  position:absolute;
+  right:20rpx;
+  letter-spacing:4rpx;
+  top:20rpx;
+}
+.wrapthreeLevel
+{
+  margin-top:30rpx;
+}
+.thirdLevel
+{
+  width:100%;
+  height:auto;
+  background:#fff;
+  padding-left:24rpx;
+  padding-right:24rpx;
+  box-sizing:border-box;
+  display:flex;
+  flex-wrap:wrap;
+   margin-top:20rpx;
+  justify-content:space-between;
+}
+.thirdLevelBox
+{
+ /* flex:1; */
+ width:33%;
+ height:208rpx;
+ margin-top:6rpx;
+ display:flex;
+ align-items: center;
+ justify-content:center;
+ background:#f0f0f0;
+}
+.thirdLevelBox image{
+  width:88%;
+  margin-left:6%;
+  height:149rpx;
+}
+.bigImg
+{
+  height:100px;
+}
+.smallImg
+{
+  height:60px;
+}
+.noevaluateData
+{
+  font-size:28rpx;
+  width:100%;
+  text-align:center;
+}

@@ -1,0 +1,91 @@
+<import src="../firstpage/productsampleTemplate/productsampleTemplate.wxml"/>
+
+
+<view class="wrapminepage">
+   <view class="minepageheader">
+     <view class="headimg">
+       <image src="../../images/cneoid26.png"></image>
+     </view>
+
+     <view class="wraploginAndEaring">
+        <view class="bigCircle">
+           <image src="../../images/h-16.png"></image>
+           <text>登录</text>
+        </view>
+        <view class="clickToLogin">点击登录</view>
+        <view class="moneypart">
+           <view class="moneypartLeft">
+               <view class="moneypartLeft1">  
+                 <text class="moneypartLeft1-1">￥</text>
+                 <text class="moneypartLeft1-2">999</text>
+               </view>
+               <view class="moneypartLeft2">账户余额</view>
+           </view>
+           <view class="moneypartRight">
+                <view class="moneypartRight1">  
+                  <text class="moneypartRight1-1">￥</text>
+                  <text class="moneypartRight1-2">999</text>
+                </view>
+                <view class="moneypartRight2">累计收入</view>
+           </view>
+         
+        </view>
+
+           <view class="cardAndMember">
+             <view class="cardAndMemberLeft">
+                 <view class="moneypartLeft1">  
+                 <text class="moneypartLeft1-1 addmoneypartLeft1-1">￥</text>
+                 <text class="moneypartLeft1-2 addmoneypartLeft1-2">999</text>
+               </view> 
+               <view class="moneypartLeft2 addmoneypartLeft2">未使用优惠</view>
+             </view>
+             <view class="cardAndMemberRight">
+                   <view class="moneypartRight1">  
+                      <text class="moneypartRight1-1 addmoneypartRight1-1"></text>
+                      <text class="moneypartRight1-2 addmoneypartRight1-2">999</text>
+                  </view>
+                  <view class="moneypartRight2 addmoneypartRight2">我的会员</view>     
+             
+             
+             </view>
+           </view>
+
+
+     </view>
+
+   </view>
+   <view class="secondpart">
+      <view class="secondpartItem">
+         <image class="secondpartItemImg" src="../../images/cneoid27.png"></image>
+         <text  class="secondpartItemText">待付款</text>
+      </view>
+      <view class="secondpartItem">
+         <image  class="secondpartItemImg" src="../../images/cneoid27.png"></image>
+         <text class="secondpartItemText">待发货</text>
+      </view>
+      <view class="secondpartItem">
+         <image  class="secondpartItemImg" src="../../images/cneoid27.png"></image>
+         <text class="secondpartItemText">待确认</text>
+      </view> 
+   </view>
+
+    <view class="wrapRecommendCtn">
+       <view class="recommendCtnTitle">
+        为您推荐
+       </view>
+     
+ 
+          <block>
+              <template is="productSample"> </template>
+              <template is="productSample"> </template>
+              <template is="productSample"> </template>
+          </block>   
+      
+    
+
+    
+    </view>
+
+
+
+</view>

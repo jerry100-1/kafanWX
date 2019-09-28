@@ -1,0 +1,29 @@
+<view style='background:#f8f8f8;padding:20rpx;padding-right:0'>
+
+  <scroll-view scroll-y='true' style="height:700px" bindscrolltolower='lower'>
+    <view wx:for='{{data}}' wx:key='{{item}}' class='box'>
+      <view class='box-fq'>
+        返券
+      </view>
+      <view class='box-er'>
+        <image src='../../images/h-8.png' class='img2'></image>
+      </view>
+      <view class='box-1'>
+        <image src='{{item.thumb}}' class='img1'></image>
+      </view>
+      <view class='box-2 text-deal'>
+        {{item.title}}
+      </view>
+      <view class='box-4'>
+        已售{{item.sales}}
+      </view>
+      <view class='box-3'>
+        <text class='wz1'>￥{{item.price}}</text>
+        <view class='wz3'>
+          <text class='wz3-1' bindtap='tomai' data-goodsid='{{item.goodsid}}'>立即购买</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>

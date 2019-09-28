@@ -1,0 +1,55 @@
+
+<template name="productSample">
+        <view class="productsample">                                                 
+                <view class="bottomlineView"></view>
+                <view class="hpcontBox">
+                  <view class="hpcontLeftBox">
+                      <view class="hpcontLeftBoxInner">
+                          <view class="hpcontLeftBoxInnerTop">
+                              <image class="hpLeftBoxInImg1" src="../../images/h-17.png"></image>
+                              <image class="hpLeftBoxInImg2"  src="../../images/h-8.png"></image>
+                              <text class="hpLeftBoxInText1">返券</text>
+                          </view>
+                          <view class="hpcontLeftBoxInnerBottom">
+                                <view class="hpcoLxIerBmLeft">
+                                    <view>洗发升级</view>
+                                    <view class="kknnbg">
+                                      ￥<text class="kknnbg1 specialText">1</text>
+                                      <text class="kknnbg2">已售325</text>
+                                    </view>
+                                </view>
+                                <view class="hpcoLxIerBmRight">
+                                    <text class="buySoText">立即购买</text>
+                                </view>
+                          </view>
+                      </view>
+                  
+                  </view>
+                  <view class="hpcontRightBox">
+                        <view class="hpcontLeftBoxInner">
+                          <view class="hpcontLeftBoxInnerTop">
+                              <image class="hpLeftBoxInImg1" src="../../images/h-18.png"></image>
+                              <image class="hpLeftBoxInImg2"  src="../../images/h-8.png"></image>
+                              <text class="hpLeftBoxInText1">返券</text>
+                          </view>
+                          <view class="hpcontLeftBoxInnerBottom">
+                                <view class="hpcoLxIerBmLeft hpcoLxIerBmLeft1">
+                                    <view>丰盈健发洗发露</view>
+                                    <view class="kknnbg">
+                                      ￥ <text class="kknnbg1 specialText">365</text>
+                                      <text class="kknnbg2">已售325</text>
+                                    </view>
+                                </view>
+                                <view class="hpcoLxIerBmRight hpcoLxIerBmRigh1">
+                                    <text class="buySoText">立即购买</text>
+                                </view>
+                          </view>
+                      </view>
+                  
+                  </view>
+                </view>           
+              <!-- 包裹以上内容 -->  
+        </view>
+      
+      
+      </template>   

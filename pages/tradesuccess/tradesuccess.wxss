@@ -1,0 +1,11 @@
+/* pages/tradesuccess/tradesuccess.wxss */
+page{
+  background:#f0f0f0;
+}
+.wraptradeCtn
+{
+  width:94%;
+  margin-left:3%;
+  height:400px;
+  background:red;
+}

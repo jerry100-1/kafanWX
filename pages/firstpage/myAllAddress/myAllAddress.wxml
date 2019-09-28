@@ -1,0 +1,121 @@
+<view>
+
+
+    <!-- 模型1 -->
+    <!-- <view class="myAddressList">
+        <view class="myAddressList1">
+            <view class="leftRadioPart">
+                <radio-group class="radio-group" data-index="0">
+                     <label class="radio" v-if="checked">
+                         <radio value="地址1" />           
+                    </label>  
+                      <label class="radio">
+                         <radio value="地址2"/>           
+                    </label>  
+                </radio-group>
+            </view>
+
+            <view class="middleTextPart">
+                <view class="middleTextPart1">
+                  <text class="middleTextPart1-1">刘涛</text>  
+                  <text class="middleTextPart1-2">15527219559</text>
+                  <text class="{{item.isdefault==1?'middleTextPart1-3':'cdnmiddleTextPart1-3'}}">{{item.isdefault==1?'默认':''}}</text>
+                </view>
+
+                <view class="middleTextPart2">
+                湖北省武汉市江夏区  高新技术开发区118号
+                </view>
+ 
+            </view>
+            <view data-addressid="{{item.id}}" data-receiver="{{item.realname}}" data-phone="{{item.phone}}" data-province="{{item.province}}" data-city="{{item.city}}" data-area="{{item.area}}" class="rightIconPart" data-address="{{item.address}}" data-isdefault="{{item.isdefault}}" catchtap='goToEditMyAddress'>
+                <image src="../../../images/h-39.png"></image>
+            </view>
+
+        </view>
+    </view> -->
+
+
+
+     <!-- 模型1 -->
+    <!-- <view class="myAddressList">
+        <view class="myAddressList1">
+            <view class="leftRadioPart">
+                  <label class="radio">
+                  <radio color="#000" bindchange="radiochange" checked='{{checked}}'/>
+                </label>
+            </view>
+
+            <view class="middleTextPart">
+                <view class="middleTextPart1">
+                  <text class="middleTextPart1-1">刘涛</text>  
+                  <text class="middleTextPart1-2">15527219559</text>
+                  <text class="{{item.isdefault==1?'middleTextPart1-3':'cdnmiddleTextPart1-3'}}">{{item.isdefault==1?'默认':''}}</text>
+                </view>
+
+                <view class="middleTextPart2">
+                湖北省武汉市江夏区  高新技术开发区118号
+                </view>
+ 
+            </view>
+            <view data-addressid="{{item.id}}" data-receiver="{{item.realname}}" data-phone="{{item.phone}}" data-province="{{item.province}}" data-city="{{item.city}}" data-area="{{item.area}}" class="rightIconPart" data-address="{{item.address}}" data-isdefault="{{item.isdefault}}" catchtap='goToEditMyAddress'>
+                <image src="../../../images/h-39.png"></image>
+            </view>
+
+        </view>
+    </view> -->
+    
+    <!-- 模型1 -->
+    <view class="myAddressList" wx:for="{{allReceiveAddressList}}" wx:key="key">
+        <view class="myAddressList1">
+            <view class="leftRadioPart">
+               <!-- <label catchtap='toggleChecked' data-receiverid="{{item.id}}" data-receiver="{{item.realname}}" data-phone="{{item.phone}}" data-province="{{item.province}}" data-city="{{item.city}}" data-area="{{item.area}}" class="rightIconPart" checked="{{}}" data-address="{{item.address}}" data-receiverid="{{item.id}}" data-isdefault="{{item.isdefault}}"   data-i="{{index}}"> -->
+
+                <!-- <label catchtap='toggleChecked' data-receiverid="{{item.id}}" data-receiver="{{item.realname}}" data-phone="{{item.phone}}" data-province="{{item.province}}" data-city="{{item.city}}" data-area="{{item.area}}" class="rightIconPart" data-address="{{item.address}}" data-receiverid="{{item.id}}" data-isdefault="{{item.isdefault}}"  checked='{{number==index||this.data.getmyreceiverid==item.id}}'  data-i="{{index}}"> -->
+                 <!-- <radio>
+                 </radio> -->
+                 <!-- <icon type="success" data-type="{{theType}}"   bindtap='toggleCheckType' data-index="{{index}}"></icon> -->
+              <icon   type="{{state==index?'success':'circle'}}"  data-state='{{index}}'  data-receiver="{{item.realname}}" data-phone="{{item.phone}}" data-province="{{item.province}}" data-city="{{item.city}}" data-area="{{item.area}}" class="rightIconPart" data-address="{{item.address}}" data-receiverid="{{item.id}}" data-isdefault="{{item.isdefault}}" name="radio" catchtap='toggleCheckType' data-index="{{index}}"></icon>
+
+<!-- 
+                   <label class="radio">
+                      <radio value="" data-receiverid="{{item.id}}" data-receiver="{{item.realname}}" data-phone="{{item.phone}}" data-province="{{item.province}}" data-city="{{item.city}}" data-area="{{item.area}}" class="rightIconPart" data-address="{{item.address}}" data-receiverid="{{item.id}}" data-isdefault="{{item.isdefault}}" name="radio" checked="{{}}"  catchtap='toggleCheckType' data-index="{{index}}"/>
+                  </label> -->
+
+               <!-- </label> -->
+            </view>
+
+            <view class="middleTextPart">
+                <view class="middleTextPart1">
+                  <text class="middleTextPart1-1">{{item.realname}}</text>  
+                  <text class="middleTextPart1-2">{{item.phone}}</text>
+                  <text class="{{item.isdefault==1?'middleTextPart1-3':'cdnmiddleTextPart1-3'}}">{{item.isdefault==1?'默认':''}}</text>
+                </view>
+
+                <view class="middleTextPart2">
+                {{item.province}}  {{item.city}}  {{otem.area}} {{item.address}}
+                </view>
+ 
+            </view>
+            <view data-addressid="{{item.id}}" data-receiver="{{item.realname}}" data-phone="{{item.phone}}" data-province="{{item.province}}" data-receiverid="{{item.id}}" data-city="{{item.city}}" data-area="{{item.area}}" class="rightIconPart" data-address="{{item.address}}" data-isdefault="{{item.isdefault}}" catchtap='goToEditMyAddress'>
+                <image src="../../../images/h-39.png"></image>
+            </view>
+
+        </view>
+    </view>
+
+<!-- 
+    <view class="horizitalView">
+      {{address}}
+    </view> -->
+  
+
+   
+    <view class="addNewAddre" catchtap='goToAddMyAddress'>添加新地址</view>
+<!-- <navigator url="../addMyAddress/addMyAddress" delta="10" hover-class="activeClassStyle" class="storeSelfWayClass">添加新地址</navigator> -->
+
+
+
+
+</view>
+
+ <!-- <button class="addNewAddre" catchtap='openMapAdd'>添加新地址</button> -->

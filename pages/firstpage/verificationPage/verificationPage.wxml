@@ -1,0 +1,54 @@
+<view class="verificationContainer">
+    <view class="verificationContainerInner">
+      <view class="verifiInnerPart1">
+          <view class="verifiInnerPart1Title">卡凡美发(国际广场店)</view>
+
+          <view class="verifiInnerPart1Ctn">
+             <view class="verifiInPart1CtnLeft">
+              <image src="../../../images/h-45.png"></image>
+             </view>
+             <view class="verifiInPart1CtnRight">
+                <text class="righhtElement1">新人礼包离子烫染5折券</text>
+                <text class="righhtElement2">优惠详情:这里是优惠详情这里是优惠详情这里是优惠详情这里是优惠详情
+                这里是优惠详情这里是优惠详情这里是优惠详情这里是优惠详情</text>
+
+                <text class="righhtElement3">5折</text>
+             
+             </view>
+          
+          </view>
+      
+          <view class="middleIconPart">
+            <view class="leftRadius"></view>
+            
+              <view class="centerSmallCircle"></view>
+              <view class="centerSmallCircle"></view>
+              <view class="centerSmallCircle"></view>
+              <view class="centerSmallCircle"></view>
+              <view class="centerSmallCircle"></view>
+              <view class="centerSmallCircle"></view>
+              <view class="centerSmallCircle"></view>
+              <view class="centerSmallCircle"></view>
+              <view class="centerSmallCircle"></view>
+           <view class="rightRadius"></view>
+
+          </view>
+
+          <view class="verifiInnerPart2Ctn">
+             <view class="par2element1">可用10张  (有效期至2019-6-1)</view>
+             <view class="par2element2">向商家出示二维码核销</view>
+             <view class="par2element3">
+               <image src="../../../images/h-47.png"></image>
+             </view>
+             <view class="par2element4">
+              <button class="shareWithFriendBtn">与朋友分享</button>
+             </view>
+            
+          </view>
+
+
+      </view>
+    
+
+    </view>
+</view>

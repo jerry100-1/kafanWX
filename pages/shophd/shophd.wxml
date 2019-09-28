@@ -1,0 +1,91 @@
+<view style='background:#f8f8f8;padding-bottom:20rpx'>
+  <image src='{{data.banner}}' class='img1'></image>
+
+  <view class='wz1'>
+    <view>
+      已分享好友券数
+    </view>
+    <view>
+      
+    </view>
+    <view>
+      {{data.sharenum}}张
+    </view>
+  </view>
+  <view class='wz2'>
+    <view>
+      好友到店使用量
+    </view>
+    <view>
+      <view class='lanz' style='width:{{data.sharenum/data.verifynum}}%'></view>
+    </view>
+    <view>
+      {{data.verifynum}}张
+    </view>
+  </view>
+  <view class='wz3'>
+    活动说明
+  </view>
+  <view class='xq'>
+    <rich-text nodes="{{data.content}}" ></rich-text>
+  </view>
+
+
+  <view class='zz1' wx:if='{{tc}}'>
+    <icon class='iconxx' bindtap='qx' type="clear" size="40" />
+  </view>
+  <scroll-view wx:if='{{tc}}' style='height:600px' class='tc1' scroll-y='true'>
+    <view>
+      <text class='wz6'>
+        商品现金券
+      </text>
+      <view wx:if='{{item.type == 1 || item.type == 2}}' wx:for='{{datatab1}}' wx:key='{{item}}' class='box'>
+        <view>
+          <image src='../../images/left.jpg' class='img2'></image>
+          <view class='mj'>
+            <view>
+              <text class='wz5'>￥</text>
+              <text class='wz4'>{{item.price}}</text>
+            </view>
+            <view>
+              满{{item.fullless}}
+            </view>
+          </view>
+        </view>
+
+        <view class='box-r'>
+          <view>
+            <!-- {{item.title}} -->
+          </view>
+
+          <view>
+            {{item.title}}
+            <text style='float:right;margin-right:40rpx;'>X{{item.num}}</text>
+          </view>
+          <view class='text-deal1' style='font-size:28rpx;'>
+            简介:{{item.description}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view>
+      <text class='wz6'>
+        服务现金券
+      </text>
+      <view wx:if='{{item.type == 3}}' wx:for='{{datatab1}}' wx:key='{{item}}' class='box1'>
+          <image src='{{item.thumb}}' class='img3'>
+            <view class='img3-1'>
+              X{{item.num}}
+            </view>
+            <view class='img3-2'>
+              {{item.starttime.date}}-{{item.endtime.date}}
+            </view>
+          </image>
+      </view>
+    </view>
+
+    <view style='text-align:center'>
+      <text class='wz7' bindtap='lq'>立即领取</text>
+    </view>
+  </scroll-view>
+</view>

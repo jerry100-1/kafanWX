@@ -1,0 +1,273 @@
+/* pages/firstpage/deliveryWay/deliveryWay.wxss */
+@import '../storeSelfWay/storeSelfWay.wxss';
+.chooseMyAddress
+{
+  width:100%;
+  height:auto;
+  background:#f0f0f0;
+  margin-top:40rpx;
+}
+.chooseMyAddress1
+{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.getDetailAddressOf
+{
+  color:red;
+
+}
+.kafanSamplaeMiddle
+{
+  position:relative;
+}
+.chooseMyAddress1,.chooseMyAddress2
+{
+  width:100%;
+  height:80rpx;
+  background:#fff;
+}
+.chooseMyAddress2
+{
+  margin-top:30rpx;
+}
+.chooseMyAddress1Left
+{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+}
+.chooseMyAddress1Left image{
+  width:52rpx;
+  height:52rpx;
+}
+.chooseMyAddress1Right image{
+  width:42rpx;
+  height:42rpx;
+  margin-right:30rpx;
+}
+.kkmmnn1,.kkmmnn2
+{
+ display:block;
+ vertical-align:middle;
+}
+.kkmmnn1{
+  margin-left:30rpx;
+}
+.kkmmnn2
+{
+  font-size:32rpx;
+  margin-left:30rpx;
+}
+.chooseMyAddress2
+{
+  margin-top:30rpx;
+}
+.receiverAddressContent
+{
+  width:100%;
+  height:90px;
+ background:#fff;
+ margin-top:20rpx;
+  display:flex;
+  flex-direction:row;
+}
+.receiverAddressCtnLeft
+{
+  flex:1;
+  text-align:center;
+  display:flex;
+  align-items:center;
+  height:90px;
+}
+.receiverAddressCtnLeft image
+{
+  width:30px;
+  margin-left:40rpx;
+  height:30px;
+}
+.receiverAddressCtnRight
+{
+  flex:5;
+  height:90px;
+  display:flex;
+  flex-direction:column;
+  font-size:30rpx;
+  align-items:center;
+  padding-left:20rpx;
+  box-sizing:border-box;
+}
+.receiverAsCtnRightText1
+{
+  color:#000;
+  display:block;
+  margin-top:16rpx;
+  width:100%;
+  font-size:30rpx;
+}
+.receiverAsCtnRightText2
+{
+  color:#000;
+  display:block;
+  font-size:24rpx;
+  width:100%;
+}
+.receiverAsCtnRightText3{
+    color:rgba(0,0,0,0.56);
+    display:block;
+    font-size:24rpx;
+    width:100%;
+    position:relative;
+    top:-20rpx;
+}
+.deliveryWayClass{
+    background:#5bdbda!important;
+}
+.deliveryWayClass,.storeSelfWayClass
+{
+  background:#5bdbda;
+  padding:3px 40px;
+  border-radius:10px;
+  color:#fff;
+  font-size:14px;
+}
+.storeSelfWayClass
+{
+  background:rgba(0,0,0,0.66)!important;
+  color:#fff;
+}
+.kafanSamMiText3-31
+{
+  background:#E00211;
+  font-size:26rpx;
+  padding:5rpx 12rpx;
+  color:#fff;
+  margin-left:20rpx;
+  border-radius:5px;
+}
+.kafanSamMiText3-31
+{
+background:#E00211;
+  font-size:26rpx;
+  position:absolute;
+  bottom:10rpx;
+  left:140rpx;
+  width:160px;
+  text-align:center;
+  height:60rpx;
+  padding-bottom:20rpx;
+  color:#fff;
+  margin-left:20rpx;
+  /* line-height:16rpx; */
+  display:block;
+  border-radius:5px;
+}
+
+/* .kafanSamMiText3-31
+{
+  background:#E00211;
+  font-size:26rpx;
+  position:absolute;
+  bottom:0rpx;
+  left:140rpx;
+  width:160px;
+  text-align:center;
+  height:24rpx;
+  padding-bottom:20rpx;
+  color:#fff;
+  margin-left:20rpx;
+  /* line-height:16rpx;
+  display:block;
+  border-radius:5px;
+} */
+.countTheMoney3
+{
+    padding-left:20rpx!important;
+    padding-right:20rpx!important;
+}
+.zenpinkafanSamplaeLeft image
+{
+    width:88rpx;
+     height:134rpx;
+    float:right;
+}
+.kkAddress
+{
+  width:100%;
+  height:84rpx;
+  background:#fff;
+  font-size:28rpx;
+  color:#666;
+  overflow:hidden;
+  white-space:nowrap;
+  line-height: 84rpx;
+  padding-left:10rpx;
+  box-sizing:border-box;
+  margin-top:20rpx;
+}
+.greenStyle
+{
+  color:green;
+}
+
+/* pages/firstpage/payway/payway.wxss */
+
+.waymodal
+{
+  width:100%;
+  margin:0 auto;
+  height:160rpx;
+  background:#f8f8f8;
+  display:flex;
+  flex-direction:row;
+}
+.waymodal:nth-of-type(1)
+{
+  border-bottom:1px dashed rgba(0,0,0,0.36);
+}
+.waymodalLeft
+{
+ flex:4;
+  height:160rpx;
+ display:flex;
+ align-items:center;
+ justify-content:flex-start;
+  background:#f8f8f8;
+}
+.paywayText
+{
+  font-size:14px;
+  margin-left:20rpx;
+}
+.waymodalLeft image
+{
+  width:64rpx;
+  height:64rpx;
+}
+.waymodalRight
+{
+ flex:1;
+ height:160rpx;
+ background:#f8f8f8;
+ display:flex;
+ align-items:center;
+ justify-content:flex-end;
+}
+.addpaywayText
+{
+  color:rgba(0,0,0,0.36);
+}
+.chooseMyOwnWayCommon
+{
+  font-size:28rpx;
+  background:#5bdbda;
+  padding:4rpx 6rpx;
+  border-radius:6rpx;
+  color:#fff;
+}
+.chooseMyOwnWayCommon
+{
+  position:relative;
+  top:0rpx;
+}

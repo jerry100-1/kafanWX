@@ -1,0 +1,118 @@
+/* pages/firstpage/myAllAddress/myAllAddress.wxss */
+page{
+  background:#f0f0f0;
+}
+.myAddressList
+{
+  margin-left:50rpx;
+  margin-right:50rpx;
+  border-radius:5rpx;
+  background:#fff;
+}
+.myAddressList{
+  margin-top:20rpx;
+}
+.myAddressList:nth-child(1){
+  margin-top:50rpx;
+}
+.myAddressList1
+{
+  height:150rpx;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+.leftRadioPart
+{
+  flex:1;
+  height:150rpx;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  padding-left:30rpx;
+  box-sizing:border-box;
+}
+.middleTextPart
+{
+  flex:8;
+  height:150rpx;
+  display:flex;
+  flex-direction:column;
+  font-size:28rpx;
+  justify-content:space-between;
+  align-items:center;
+}
+.middleTextPart1
+{
+  width:100%;
+  text-align:left;
+  margin-top:22rpx;
+}
+.middleTextPart1-1
+{
+  font-size:32rpx;
+  display:inline-block;
+  vertical-align:middle;
+}
+.middleTextPart1-2
+{
+  font-size:28rpx;
+  margin-left:20rpx;
+  display:inline-block;
+  vertical-align:middle;
+}
+.middleTextPart1-3
+{
+ padding:2px 3px;
+ color:#FB636A;
+ display:inline-block;
+ vertical-align:middle;
+ border:1px solid #FB636A;
+ margin-left: 30rpx;
+}
+.cdnmiddleTextPart1-3
+{
+padding:2px 3px;
+ color:#FB636A;
+ display:inline-block;
+ vertical-align:middle;
+ border:none;
+ margin-left: 30rpx;
+}
+.middleTextPart2
+{
+  width:100%;
+  text-align:left;
+  font-size:28rpx;
+  margin-bottom:22rpx;
+}
+.rightIconPart
+{
+   flex: 1;
+   height:150rpx;
+   display:flex;
+   align-items:center;
+ 
+}
+
+.rightIconPart image{
+  width:42rpx;
+  height:42rpx;
+}
+.addNewAddre
+{
+  width:60%;
+  height:84rpx;
+  background:#5dccd3;
+  color:#fff;
+  border-radius:10rpx;
+  text-align:center;
+  line-height:84rpx;
+  margin:60rpx auto;
+  }
+  .horizitalView
+  {
+    width:100%;
+    height:60rpx;
+    background:red;
+  }

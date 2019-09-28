@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/firstpage/firstpage",
+    "pages/seckill/seckill",
+    "pages/firstpage/productdescribe/productdescribe",
+    "pages/testauth/auth",
+    "pages/shophd/shophd",
+    "pages/discountcoupon/fwqhx/fwqhx",
+    "pages/discountcoupon/discountcoupon",
+    "pages/tradesuccess/tradesuccess",
+    "pages/demo/demo",
+    "pages/productsampleTemplate/productsampleTemplate",
+    "pages/firstpage/myAllAddress/myAllAddress",
+    "pages/firstpage/productEvaluateList/productEvaluateList",
+    "pages/earnings/earnings",
+    "pages/income/income",
+    "pages/timecard/paymon/paymon",
+    "pages/Storesdetails/Storesdetails",
+    "pages/Storesdetails/map/map",
+    "pages/firstpage/paysuccessEvaluate/paysuccessEvaluate",
+    "pages/firstpage/myallorder/myallorder",
+    "pages/minepersonhomepage/minepersonhomepage",
+    "pages/productdetail/productdetail",
+    "pages/mine/mine",
+    "pages/shoppingcart/shoppingcart",
+    "pages/firstpage/verificationPage/verificationPage",
+    "pages/firstpage/paySuccess/paySuccess",
+    "pages/firstpage/storeSelfWay/storeSelfWay",
+    "pages/firstpage/deliveryWay/deliveryWay",
+    "pages/firstpage/addMyAddress/addMyAddress",
+    "pages/firstpage/myallCouponCardList/myallCouponCardList",
+    "pages/firstpage/editProductAddress/editProductAddress",
+    "pages/firstpage/getProductAddress/getProductAddress",
+    "pages/timecard/timecard",
+    "pages/timecard/order/order",
+    "pages/firstpage/productsample/productsample",
+    "pages/vipqy/vipqy"
+
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "请点击确定"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

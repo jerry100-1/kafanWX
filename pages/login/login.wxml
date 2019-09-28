@@ -1,0 +1,11 @@
+<!-- <view>
+  <button catchtap='goLogin'>登陆</button>
+
+</view> -->
+
+<view class="wrapallmo" wx:if="{{showBtnFlag}}">
+  <button class="getPhBtn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+     获取手机号码 
+  </button>
+
+</view>

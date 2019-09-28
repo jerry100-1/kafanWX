@@ -1,0 +1,215 @@
+<view style='background:#f8f8f8'>
+  <view class='header'>
+    <view class='header-t'>
+      <view class='header-m'>
+        <view>
+          <image src='{{nickimg}}' class='img1'></image>
+        </view>
+        <view>
+          <view class='wz1 text-deal'>
+            {{nickname}}
+          </view>
+          <view class='wz2 text-deal'>
+            {{count.used.total}}张共省{{count.used.totalprice}}元
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='section'>
+    <view class='{{xz1?"xx":"yy"}}'  bindtap='xz1'>
+      未使用
+      <text style='font-size:26rpx;'>({{notuselist.length}})</text>
+    </view>
+    <view class='{{xz2?"xx":"yy"}}' bindtap='xz2'>
+      已使用
+    </view>
+    <view class='{{xz3?"xx":"yy"}}' bindtap='xz3'>
+      已过期
+      <text style='font-size:26rpx;'>({{timeoutlist.length}})</text>
+    </view>
+  </view>
+
+
+  <scroll-view class='jbgd' scroll-y='true'  bindscrolltolower='lower'>
+    <view  wx:if='{{xz1}}'>
+      <text class='wz6'>
+        商品现金券
+      </text>
+      <view wx:if='{{item.type == 1 || item.type == 2}}' wx:for='{{notuselist}}' wx:key='{{item}}' class='box'>
+        <view>
+          <image src='../../images/left.jpg' class='img2'></image>
+          <view class='mj'>
+            <view>
+              <text class='wz3'>￥</text>
+              <text class='wz4'>{{item.price}}</text>
+            </view>
+            <view>
+              满{{item.fullless}}
+            </view>
+          </view>
+        </view>
+
+        <view class='box-r'>
+          <view>
+            {{item.title}}
+          </view>
+
+          <view>
+            {{item.starttime.date}}-{{item.endtime.date}}
+            <text style='float:right;margin-right:40rpx;'>X{{item.num}}</text>
+          </view>
+
+          <view>
+            <text>立即使用</text>
+            <text>立即分享</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view  wx:if='{{xz1}}'>
+      <text class='wz6'>
+        服务现金券
+      </text>
+      <view wx:if='{{item.type == 3}}' wx:for='{{notuselist}}' wx:key='{{item}}' class='box1'>
+          <image src='{{item.thumb}}' class='img3'>
+            <view class='img3-1'>
+              X{{item.num}}
+            </view>
+            <view class='img3-2'>
+              {{item.starttime.date}}-{{item.endtime.date}}
+            </view>
+            <view class='img3-3' data-cid='{{item.cid}}' bindtap='tofwqhx'>
+              立即使用
+            </view>
+            <view class='img3-4'>
+              立即分享
+            </view>
+          </image>
+      </view>
+    </view>
+
+    <view  wx:if='{{xz2}}'>
+      <text class='wz6'>
+        商品现金券
+      </text>
+      <view wx:if='{{item.type == 1 || item.type == 2}}' wx:for='{{usedlist}}' wx:key='{{item}}' class='box'>
+        <view>
+          <image src='../../images/left.jpg' class='img2'></image>
+          <view class='mj'>
+            <view>
+              <text class='wz3'>￥</text>
+              <text class='wz4'>700</text>
+            </view>
+            <view>
+              满300
+            </view>
+          </view>
+        </view>
+
+        <view class='box-r'>
+          <view>
+            {{item.title}}
+          </view>
+
+          <view>
+            {{item.starttime.date}}-{{item.endtime.date}}
+            <text style='float:right;margin-right:40rpx;'>X{{item.num}}</text>
+          </view>
+
+          <view>
+            <text>立即使用</text>
+            <text>立即分享</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view  wx:if='{{xz2}}'>
+      <text class='wz6'>
+        服务现金券
+      </text>
+      <view wx:if='{{item.type == 3}}' wx:for='{{usedlist}}' wx:key='{{item}}' class='box1'>
+          <image src='{{item.thumb}}' class='img3'>
+            <view class='img3-1'>
+              X{{item.num}}
+            </view>
+            <view class='img3-2'>
+              {{item.starttime.date}}-{{item.endtime.date}}
+            </view>
+            <view class='img3-3'>
+              立即使用
+            </view>
+            <view class='img3-4'>
+              立即分享
+            </view>
+          </image>
+      </view>
+    </view>
+
+    <view  wx:if='{{xz3}}'>
+      <text class='wz6'>
+        商品现金券
+      </text>
+      <view wx:if='{{item.type == 1 || item.type == 2}}' wx:for='{{timeoutlist}}' wx:key='{{item}}' class='box'>
+        <view>
+          <image src='../../images/left.jpg' class='img2'></image>
+          <view class='mj'>
+            <view>
+              <text class='wz3'>￥</text>
+              <text class='wz4'>700</text>
+            </view>
+            <view>
+              满300
+            </view>
+          </view>
+        </view>
+
+        <view class='box-r'>
+          <view>
+            {{item.title}}
+          </view>
+
+          <view>
+            {{item.starttime.date}}-{{item.endtime.date}}
+            <text style='float:right;margin-right:40rpx;'>X{{item.num}}</text>
+          </view>
+
+          <view>
+            <text>立即使用</text>
+            <text>立即分享</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view  wx:if='{{xz3}}'>
+      <text class='wz6'>
+        服务现金券
+      </text>
+      <view wx:if='{{item.type == 3}}' wx:for='{{timeoutlist}}' wx:key='{{item}}' class='box1'>
+          <image src='{{item.thumb}}' class='img3'>
+            <view class='img3-1'>
+              X{{item.num}}
+            </view>
+            <view class='img3-2'>
+              {{item.starttime.date}}-{{item.endtime.date}}
+            </view>
+            <view class='img3-3'>
+              立即使用
+            </view>
+            <view class='img3-4'>
+              立即分享
+            </view>
+          </image>
+      </view>
+    </view>
+
+  </scroll-view>
+
+
+
+
+
+
+</view>

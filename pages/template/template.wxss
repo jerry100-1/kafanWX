@@ -1,0 +1,75 @@
+.icon{
+  width:54rpx;
+  height: 54rpx;
+}
+.tabBar{
+  width:100%;
+  position:fixed;
+  display:flex;
+  flex-direction:row;
+  bottom:20rpx;
+  height:90rpx;
+  z-index:100;
+  /* padding:10rpx; */
+  border-radius:45rpx;
+  margin-left:-4rpx;
+  /* background:#fff; */
+  font-size:20rpx;
+  margin-left:15rpx;
+  color:#8A8A8A;
+  /* box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa; */
+}
+
+ .tabBar-item{
+  float:left;
+  width:20%;
+  height:90rpx;
+  background:#202020;
+  text-align: center;
+  overflow: hidden;
+}
+ .tabBar-item:nth-child(1)
+ {
+   border-top-left-radius:45rpx;
+   border-bottom-left-radius:45rpx;
+ }
+  .tabBar-item:nth-child(4)
+ {
+   border-top-right-radius:45rpx;
+   border-bottom-right-radius:45rpx;
+ }
+/*当前字体颜色*/
+.tabBartext{
+  color:red;
+}
+.erweima
+{
+  width:16%;
+  height:90rpx;
+  position:absolute;
+  right:10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  top:0px;
+  background:#202020!important;
+  border-radius:60rpx;
+}
+.erweima image{
+  width:52rpx;
+  margin-top:5rpx;
+  height:52rpx;
+}
+.erweima button
+{
+  background:#202020!important;
+  font-size:26rpx;
+  padding-left:5rpx;
+  padding-right:5rpx;
+  height:60rpx;
+  line-height:40rpx;
+white-space:nowrap;
+  margin-bottom:5rpx;
+  color:#fff!important;
+}

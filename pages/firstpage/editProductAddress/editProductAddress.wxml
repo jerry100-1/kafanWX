@@ -1,0 +1,90 @@
+<view class="getProductAddressContainer">
+    <view class="wrapFourText">
+       <!-- 收货人姓名 -->
+       <view class="simpleInput1">
+       
+         <view class="simpleInput1Left">
+           收货人
+         </view>
+         <view class="simpleInput1Right">
+             <input type="text" class="shuruInput" bindinput="editNewReceiver" value="{{editNativeReceiver}}" placeholder="请输入收货人姓名" placeholder-class="kkmm" auto-focus focus="true"  />
+         </view>
+
+       </view>
+       <!-- 收货人手机号码 -->
+       <view class="simpleInput1">
+       
+         <view class="simpleInput1Left">
+           手机
+         </view>
+         <view class="simpleInput1Right">
+             <input type="number" bindinput="editNewReceiverPhone" value="{{editNativePhone}}" class="shuruInput" placeholder="请输入收货人手机号码" placeholder-class="kkmm" auto-focus focus="true"  />
+         </view>
+
+       </view>
+
+      <!-- 收货人所在地区 -->
+       <view class="simpleInput1 simpleInput1add">
+       
+         <view class="simpleInput1Left">
+           地区
+          
+         </view>
+         <view class="simpleInput1Right">
+
+                <picker
+          mode="region"
+          bindchange="bindRegionChange"
+          value="{{region}}"
+          custom-item="{{customItem}}"
+        >
+          <view class="picker pickerflex" >
+            <input  value="{{editNativeProvince}}"/>
+            <input value="{{editNativeCity}}"/>
+            <input value="{{editNativeArea}}"/>
+          </view>
+        </picker>
+
+
+         </view>
+
+          <image  class="rightArrow" src="../../../images/h-38.png"          ></image>
+
+       </view> 
+
+        <!-- 收货人详细地址 -->
+       <view class="simpleInput1">
+       
+         <view class="simpleInput1Left">
+            详细地址
+         </view>
+         <view class="simpleInput1Right">
+             <input type="text" bindinput="editNewReceiverAddress" value="{{editNativeAddress}}" class="shuruInput" placeholder="请输入收货人详细地址" placeholder-class="kkmm" auto-focus focus="true"  />
+         </view>
+
+       </view> 
+
+       
+        <!-- 收货人详细地址 -->
+       <view class="simpleInput1" style='background:#f0f0f0;margin-top:40rpx;'>
+       
+         <view class="simpleInput1Left" style='flex:2'>
+           设为默认地址
+         </view>
+         <view class="simpleInput1Right" style='text-align:right;'>
+               <switch color="#5dccd3" checked="{{editNativeIsdefault==1?true:false}}" bindchange="switch1Change" />
+         </view>
+
+       </view> 
+
+        <view class="submitAddressBtn" catchtap='submitToUpdateAddress'>
+           保存地址
+        </view>
+
+
+    </view>
+
+
+</view>
+
+

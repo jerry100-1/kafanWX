@@ -1,0 +1,68 @@
+<view class="productEvaluateContainer">
+
+  <view class="wrapthreeLevel">
+        <!-- 强烈推荐 -->
+        <!-- <view class="evaluate-recommendStrong">
+          <view class="firstLine">
+            <image class="firstLineImg" src="../../../images/h-23.png"></image>
+            <text class="firstLineText">天***堂</text>
+          </view>
+          <view class="secondLine">
+             不错! ! !物美价廉,品质棒棒哒
+          </view>
+          <view class="thirdLine">
+             <image src="../../../images/h-29.png" bindtap='previewImg'></image>
+          </view>
+
+          <view class="recommendText">强烈推荐</view>
+
+        </view> -->
+        <!-- 很满意 -->
+        <!-- <view class="evaluate-recommendStrong">
+          <view class="firstLine">
+            <image class="firstLineImg" src="../../../images/h-23.png"></image>
+            <text class="firstLineText">天***堂</text>
+          </view>
+          <view class="secondLine">
+              包装好看
+          </view>
+          
+
+          <view class="recommendText">很满意</view>
+
+        </view> -->
+
+        <!-- 还不错 -->
+
+        <view class="evaluate-recommendStrong" wx:if="{{allEvaluateList!=''}}" wx:for="{{allEvaluateList}}" wx:key="key">
+          <view class="firstLine">
+            <image class="firstLineImg" src="{{item.memberinfo.avatar}}"></image>
+            <text class="firstLineText">{{item.memberinfo.nickname}}</text>
+          </view>
+          <view class="secondLine">
+            {{item.content}}
+          </view>
+          <!-- <view class="thirdLine">
+            <image src="../../../images/h-29.png"></image>
+          </view> -->
+          <!-- wx:if="{{item.image.length==1}}" -->
+          <view class="thirdLevel">
+             <view class="thirdLevelBox" wx:for="{{item.image}}" wx:for-item="image2">
+                <image src="{{image2}}" class="{{item.length==1?'bigImg':'smallImg'}}"   data-src="{{image2}}"  data-list="{{item.image}}"  bindtap="previewImage"></image>
+             </view>
+             <view style='clear:both;'></view>
+          </view>
+
+          <view class="recommendText">{{item.label}}</view>
+
+        </view>
+
+        <view class="noevaluateData" wx:if="{{allEvaluateList==''}}">
+           暂无商品评价哦!
+        </view>
+
+
+
+     </view>
+
+</view>

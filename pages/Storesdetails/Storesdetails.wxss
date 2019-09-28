@@ -1,0 +1,49 @@
+/* pages/Storesdetails/Storesdetails.wxss */
+page{
+  height: 100%;
+}
+.img1{
+  width: 100%;
+  vertical-align:middle;
+}
+.img2{
+  width:28rpx;
+  height:28rpx;
+  vertical-align:middle;
+}
+.img3{
+  width: 80rpx;
+  height: 120rpx;
+  vertical-align:middle;
+}
+.botto{
+  position: relative;
+}
+.page-b{
+  display: flex;
+  position: absolute;
+  left: 0rpx;
+  bottom: 0rpx;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  height: 100%;
+  width: 100%;
+}
+.page-b-l{
+  flex: 3;
+  padding-left:40rpx;
+  font-size:28rpx;
+  margin-top:140rpx;
+}
+.page-b-l-t{
+  margin-bottom: 50rpx;
+}
+.page-b-l-b{
+  margin-top: 50rpx;
+}
+.page-b-r{
+  flex: 1;
+  display:flex;                    
+  justify-content: center;
+  margin-top:140rpx;
+}

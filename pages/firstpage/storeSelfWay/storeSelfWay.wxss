@@ -1,0 +1,638 @@
+/* pages/firstpage/storeSelf/storeSelf.wxss */
+@import '../confirmorder/confirmorder.wxss';
+page{
+  /* background:#fff; */
+}
+.wrapAllStoreCtn
+{
+  width:100%;
+  height:auto;
+  background:#f0f0f0!important;
+}
+.mapContent
+{
+  height:520rpx;
+  background:#fff;
+  margin-top:30rpx;
+}
+.mapTitle
+{
+  margin-left:30rpx;
+  font-size:32rpx;
+  font-weight:bold;
+  letter-spacing:2px;
+  padding-top:30rpx;
+  padding-bottom:24rpx;
+}
+.mapResultText
+{
+  display:flex;
+  flex-direction:row;
+  width:92%;
+  height:80rpx;
+  margin:30rpx auto;
+  background:#f0f0f0;
+}
+.mapResultTextImg
+{
+  flex:1;
+  height:80rpx;
+}
+.mapResultTextText
+{
+  flex:10;
+  font-size:28rpx;
+  height:70rpx;
+  display:flex;
+  align-items:center;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+  color:rgba(0,0,0,0.68);
+}
+.mapResultTextImg image
+{
+ width:40rpx;
+ height:40rpx;
+ margin-top:20rpx;
+}
+.contactpartText
+{
+  width:92%;
+  height:60rpx;
+  margin-left:auto;
+  margin-right:auto;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+}
+.contactpartText1
+{
+  flex:1;
+  height:60rpx;
+}
+.contactpartText2
+{
+  flex:11;
+  display:flex;
+  white-space:nowrap;
+  font-size:30rpx;
+  align-items:center;
+  justify-content:flex-start;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  height:60rpx;
+}
+.contactpartText1 image
+{
+  width:46rpx;
+  height:46rpx;
+  margin-top:7rpx;
+}
+.textColor1
+{
+  color:rgba(0,0,0,0.66);
+}
+.textColor0,.textColor1
+{
+  display:inline-block;
+  vertical-align:middle;
+}
+.textColor1
+{
+  margin-left:30rpx;
+}
+.kafanProductPart
+{
+  width:100%;
+  height:auto;
+  padding-bottom:60rpx;
+}
+.kafanProductPartInner
+{
+    width:100%;
+    height:auto;
+    padding-top:20rpx; 
+    margin-bottom:200rpx;
+}
+.kafanProductPartSamplae
+{
+  width:100%;
+  height:170rpx;
+  margin-top:40rpx;
+  display:flex;
+}
+.kafanSamplaeLeft
+{
+ width:130rpx;
+ height:170rpx;
+ flex:2;
+}
+.kafanSamplaeLeft image
+{
+  width:128rpx;
+  height:164rpx;
+  border:1px solid rgba(0,0,0,0.18);
+}
+.zenpinkafanSamplaeLeft image
+{
+    width:88rpx;
+     height:134rpx;
+    float:right;
+}
+.kafanSamplaeMiddle
+{
+ flex:8;
+ height:164rpx;
+ position:relative;
+ font-size:30rpx;
+ display:flex;
+ flex-direction:column;
+ padding-left:30rpx;
+ box-sizing:border-box;
+ justify-content:center;
+ align-items:flex-start;
+}
+.kafanSamMiText1,.kafanSamMiText2,.kafanSamMiText3
+{
+  display:block;
+}
+.kafanSamMiText1
+{
+  font-size:34rpx;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  height:40rpx;
+  overflow:hidden;
+}
+.kafanSamMiText2
+{
+  font-size:28rpx;
+  color:rgba(0,0,0,0.16);
+}
+.kafanSamMiText3
+{
+  color:#E00211;
+  display:block;
+  margin-top:10rpx;
+}
+.kafanSamplaeRight
+{
+ flex:1;
+ height:164rpx;
+ display:flex;
+ font-size:30rpx;
+ align-items:flex-end;
+ padding-bottom:30rpx;
+ box-sizing:border-box;
+ justify-content:flex-end;
+}
+.kafanSamMiText3-1
+{
+ font-size:20rpx;
+}
+.kafanSamMiText3-2
+{
+  font-size:33rpx;
+  font-weight:bold;
+}
+.countTheMoney
+{
+  width:100%;
+  height:224rpx;
+  background:#fff;
+  font-size:28rpx;
+  display:flex;
+  justify-content:space-between;
+  
+  box-sizing:border-box;
+  flex-direction: column;
+  margin-top:40rpx;
+}
+.countTheMoney1,.countTheMoney2,.countTheMoney3
+{
+  padding-left:60rpx;
+  box-sizing:border-box;
+  padding-right:60rpx;
+}
+.countTheMoney1
+{
+  margin-top:20rpx;
+}
+.countTheMoney3
+{
+  display:flex;
+  padding-left:20rpx!important;
+  padding-right:20rpx!important;
+}
+.countTheMoneyLine
+{
+  width:98%;
+  height:0rpx;
+  margin:0 auto;
+  border-bottom:2rpx dashed rgba(0,0,0,0.16);
+}
+.countTheMoney2-2
+{
+  margin-left:20rpx;
+  color:#E00211;
+  font-weight:bold;
+  font-size:32rpx;
+}
+.countTheMoney1-2
+{
+  font-size:24rpx;
+  margin-left:20rpx;
+  color:#d2d2d2;
+}
+.countTheMoney3
+{
+  padding-bottom:20rpx;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  box-sizing:border-box;
+}
+.countTheMoney3-1,.countTheMoney3-2,.countTheMoney3-3
+{
+  font-size:28rpx;
+  display:block;
+  vertical-align:middle;
+}
+.countTheMoney3-2
+{
+ color:#E00211;
+}
+.countTheMoney3-3
+{
+ font-size:34rpx;
+ font-weight:bold;
+ position:relative;
+ top:-3rpx;
+ color:#E00211;
+}
+.chooseWayPart
+{
+  width:100%;
+  height:auto;
+}
+.chooseWeiXin,.chooseRemainMoney
+{
+  width:100%;
+  height:168rpx;
+}
+.chooseRemainMoney
+{
+  height:168rpx;
+}
+.chooseWeiXin
+{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(0,0,0,0.18);
+}
+.chooseWeiXin image
+{
+ width:64rpx;
+ height:64rpx;
+}
+.leftCImage,.RightCText
+{
+  display:inline-block;
+  vertical-align:middle;
+}
+.RightCText
+{
+  font-size:28rpx;
+  margin-left:20rpx;
+}
+.chooseRemainMoney
+{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.chooseRemainMoney image
+{
+  width:66rpx;
+  height:66rpx;
+}
+.countTotalMonay
+{
+  width:100%;
+  height:100rpx;
+  margin-top:-200rpx;
+}
+.countTotalInnerLeft
+{
+ width:75%;
+ height:100rpx;
+ float:left;
+ background:#fff;
+ line-height:100rpx;
+}
+.countTotaLeft-1
+{
+ font-size:30rpx;
+ margin-left:40rpx;
+}
+.countTotaLeft-2
+{
+font-size:32rpx;
+color:#E00211;
+font-weight:bold;
+}
+.countTotaLeft-3
+{
+ font-size:24rpx;
+ color:rgba(0,0,0,0.76);
+ margin-left:20rpx;
+}
+.countTotalInnerRight
+{
+ width:25%;
+ height:100rpx;
+ line-height:100rpx;
+ text-align:center;
+ color:#fff;
+ font-size:36rpx;
+ float:right;
+ background:#5dd0d5;
+}
+.showModalDiv
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height:100%;
+  overflow-y:scroll;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  display: block;
+}
+.wrapCashCouponCardDiv
+{
+  width:70%;
+  height:auto;
+  margin-left:15%;
+  margin-top:300rpx;
+}
+.wrapSingleCashCouponCardDiv
+{
+  margin-top:90px!important;
+}
+/* .wrapCashCouponCardDiv:nth-last-of-type(1)
+{
+   margin-top:20rpx;
+} */
+.userfulCashCouponTitle
+{
+  color:#fff;
+  font-size:32rpx;
+  margin:0 auto;
+  text-align:center;
+  display:block;
+}
+.WrapCouponCardDemo
+{
+  margin-top:40rpx;
+}
+.CashCouponCardDemo
+{
+  width:100%;
+  height:auto;
+  background: #5dd4d8;
+}
+
+.CashCouponCardDemo {
+  position: relative;
+  width: 100%;
+  height:auto;
+  margin-right: 3%;
+  background: #5dd4d8;
+  display: inline-block;
+}
+.CashCouponCardDemo:before{
+  content: "";
+  position: absolute;
+  top: -20px;
+  display: block;
+  width: 10px;
+  height: 100%;
+  margin-top: 20px;
+  background-size: 20px 10px;
+}
+.CashCouponCardDemo:before {
+  left: -10px;
+  background-color:transparent;
+  background-position: 100% 35%;
+  background-image: linear-gradient(-45deg, #5dd4d8 25%, transparent 25%, transparent), 
+                  linear-gradient(-135deg, #5dd4d8 25%, transparent 25%, transparent), 
+                  linear-gradient(-45deg, transparent 75%, #5dd4d8 75%), 
+                  linear-gradient(-135deg, transparent 75%, #5dd4d8 75%);
+}
+.CashCouponCardDemo2
+{
+  background:#666;
+}
+.CashCouponCardDemo2:before
+{
+ left: -10px;
+  background-color:transparent;
+  background-position: 100% 35%;
+  background-image: linear-gradient(-45deg, #666 25%, transparent 25%, transparent), 
+                  linear-gradient(-135deg, #666 25%, transparent 25%, transparent), 
+                  linear-gradient(-45deg, transparent 75%, #666 75%), 
+                  linear-gradient(-135deg, transparent 75%, #666 75%);
+}
+.CashCouponCardDemoLeft
+{
+  width:29%;
+  background:#5bdbda;
+  height:auto;
+  float:left;
+  display:flex;
+  align-items:center;
+}
+.leftChinaIcon
+{
+  font-size:28rpx;
+  color:#fff;
+  margin-left:18rpx;
+   position:relative;
+ top:40rpx;
+}
+.rightNumberText
+{
+ display:flex; 
+ flex-direction:column;
+ color:#fff;
+ position:relative;
+ top:40rpx;
+  align-items:center;
+}
+.ffText1
+{
+  display:block;
+  font-size:50rpx;
+  font-weight:bold;
+}
+.ffText1,.ffText2
+{
+  display:block;
+}
+.ffText2
+{
+  font-size:24rpx;
+}
+.CashCouponCardDemoRight
+{
+   width:71%;
+   background:#fff;
+   float:right;
+   display:flex;
+   height:auto;
+}
+.CashCouponCardDemoRight
+{
+  font-size:24rpx;
+  align-items:flex-start;
+  display:flex;
+  flex-direction:column;
+}
+.CashCouponText1
+{
+  margin-top:20rpx;
+  margin-left:20rpx;
+}
+.CashCouponText2
+{
+  margin-top:0rpx;
+  margin-left:20rpx;
+  color:rgba(0,0,0,0.68);
+}
+.CashCouponText3
+{
+  margin-top:30rpx;
+  padding-left:20rpx;
+  padding-right:60rpx;
+  box-sizing:border-box;
+  text-align:right;
+  width:100%;
+  height:30px;
+}
+.CashCouponCardDemoLeft2
+{
+  background:#666;
+}
+
+.storeSelfWayClass,.deliveryWayClass
+{
+  background:#5bdbda;
+  padding:3px 40px;
+  border-radius:10px;
+  color:#fff;
+  font-size:14px;
+}
+.storeSelfWayClass{
+    background:#5bdbda!important;
+}
+.deliveryWayClass
+{
+  background:rgba(0,0,0,0.66)!important;
+  color:#fff;
+}
+.kafanSamMiText3-31
+{
+  background:#E00211;
+  font-size:26rpx;
+  position:absolute;
+  bottom:10rpx;
+  left:140rpx;
+  width:160px;
+  text-align:center;
+  height:60rpx;
+  padding-bottom:20rpx;
+  color:#fff;
+  margin-left:20rpx;
+  /* line-height:16rpx; */
+  display:block;
+  border-radius:5px;
+}
+.chooseMyOwnWayCommon
+{
+  font-size:28rpx;
+  background:#5bdbda;
+  padding:4rpx 6rpx;
+  border-radius:6rpx;
+  color:#fff;
+}
+.chooseMyOwnWayCommon
+{
+  position:relative;
+  top:0rpx;
+}
+
+
+/* pages/firstpage/payway/payway.wxss */
+.wrappayway
+{
+
+}
+.waymodal
+{
+  width:100%;
+  margin:0 auto;
+  height:160rpx;
+  background:#f8f8f8;
+  display:flex;
+  flex-direction:row;
+}
+.waymodal:nth-of-type(1)
+{
+  border-bottom:1px dashed rgba(0,0,0,0.36);
+}
+.waymodalLeft
+{
+ flex:4;
+  height:160rpx;
+   background:#f8f8f8;
+ display:flex;
+ align-items:center;
+ justify-content:flex-start;
+ /* background:khaki; */
+}
+.paywayText
+{
+  font-size:14px;
+  margin-left:20rpx;
+}
+.waymodalLeft image
+{
+  width:64rpx;
+  height:64rpx;
+}
+.waymodalRight
+{
+ flex:1;
+ height:160rpx;
+ /* background:lawngreen; */
+ display:flex;
+  background:#f8f8f8;
+ align-items:center;
+ justify-content:flex-end;
+}
+.addpaywayText
+{
+  color:rgba(0,0,0,0.36);
+}
+.displayClass
+{
+ display:none;
+}
+.noneClass
+{
+ display:block;
+}

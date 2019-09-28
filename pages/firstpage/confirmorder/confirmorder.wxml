@@ -1,0 +1,18 @@
+<view class="confirmOrderPage">
+ 
+
+    <view class="wrapconfirmPage">
+      <view class="confirmPagePartTitle">
+         <view class="{{activeFlag==1?'activeClassStyle':'normalClassStyle'}}" bindtap="chooseway1">门店自提</view>
+         <view class="{{activeFlag==2?'activeClassStyle':'normalClassStyle'}}" bindtap="chooseway2">物流配送</view>
+       </view>
+ 
+      <view class="mapContent"></view>
+
+    
+    
+    
+    </view>
+    
+
+</view>

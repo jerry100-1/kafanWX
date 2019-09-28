@@ -1,0 +1,14 @@
+<view class="wrapAllCtnSucc">
+    <!-- 模型1  -->
+    <view class="commentEvaluateModal">
+       <view class="commentEvaluateCtn1">
+          <view class="commentEvaluateItem"></view>
+          <view class="commentEvaluateItem"></view>
+          <view class=""></view>
+          <view></view>
+          <view></view>
+       </view>
+
+    </view>
+
+</view>

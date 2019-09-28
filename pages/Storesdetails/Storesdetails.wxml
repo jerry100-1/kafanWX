@@ -1,0 +1,24 @@
+<view>
+  <rich-text nodes="{{data1.content}}" ></rich-text>
+
+  <view class='botto'>
+    <image src="{{data1.banner}}" class='img1'></image>
+    <view class='page-b'>
+      <view class='page-b-l'>
+        <view class='page-b-l-t'>
+          <image src='../../images/h-13.png' class='img2'></image>
+          {{data1.title}}
+        </view>
+
+        <view class='page-b-l-b' bindtap='tomap'>
+          <image src='../../images/cneoid14.png' class='img2'></image>
+          {{data1.address}}
+        </view>
+      </view>
+
+      <view class='page-b-r'>
+        <image bindtap='calltel' src='../../images/qqqa.png' class='img3'></image>
+      </view>
+    </view>
+  </view>
+</view>

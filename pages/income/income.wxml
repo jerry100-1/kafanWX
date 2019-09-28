@@ -1,0 +1,130 @@
+ <view style='background:#f8f8f8'>
+  <view class='header'>
+  <image src='../../images/cneoid8.png' class='img1'></image>
+    <view class='wz1'>
+      收入
+    </view>
+
+    <view class='wz2'>
+      <text class='mini'>￥</text>
+      <text class='ddd'>{{totalcomeinprice}}</text>
+    </view>
+  </view>
+
+  <view style='padding-left:5rpx;padding-right:5rpx;line-height:20rpx;height:60rpx;background:white;'>
+    <view style='display:inline-block'>
+      <picker class='text-o' mode="date" value="{{date}}" bindchange="bindDateChange">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+      <text class='text-o'>-至-</text>
+      <picker class='text-o' mode="date" value="{{date1}}" bindchange="bindDateChange1">
+        <view class="picker">
+          {{date1}}
+        </view>
+      </picker>
+      <image src='../../images/cneoid6.png' style='width:20rpx;height:20rpx;margin-left:10rpx'></image>
+    </view>
+
+    <view style='display:inline-block;margin-left:20rpx;'>
+      <text class="text-o {{xz1?'xzz':'fq'}}" style='width:90rpx' bindtap='dj1'>
+        近30天
+      </text>
+      <text class="text-o {{xz2?'xzz':'fq'}}" style='width:90rpx' bindtap='dj2'>
+        近7天
+      </text>
+      <text class="text-o {{xz3?'xzz':'fq'}}" style='width:80rpx' bindtap='dj3'>
+        昨天
+      </text>
+      <text class="text-o {{xz4?'xzz':'fq'}}" style='width:80rpx' bindtap='dj4'>
+        本月
+      </text>
+    </view>
+  </view>
+
+  <!-- <view class='bigbox'> -->
+  <scroll-view scroll-y='true'  style="height:520px" bindscrolltolower='lower'>
+    <view class='box' wx:for="{{data1}}" wx:key="{{index}}">
+      <view class='box-t'>
+        <view>下单时间：{{item.createtime.datetime}}</view>
+        <view wx:if="{{item.status == 4}}">
+          {{item.status_text}}
+        </view>
+        <view wx:else style='background:#EC6941;'>
+          {{item.status_text}}1
+        </view>
+      </view>
+
+      <view class='box-m' wx:for="{{item.ordergoodsinfo}}" wx:key="{{index}}" wx:for-item="res">
+        <view class='box-m-l'>
+          <image src='{{res.optioninfo.thumb}}' class='img2'></image>
+        </view>
+
+        <view class='box-m-r'>
+          <view class='title'>
+            <view class='text-deal'>
+              {{res.goodsinfo.title}}
+            </view>
+            <view>
+              ￥{{res.price}}
+            </view>
+          </view>
+          <view class='futitle'>
+            <view class='text-deal'>
+              {{res.goodsinfo.description}}
+            </view>
+            <view>
+              X{{res.buynum}}
+            </view>
+          </view>
+
+          <view class='gg'>
+            {{res.optioninfo.optiontitle}}
+          </view>
+        </view>
+      </view>
+      
+      <view class='box1'>
+        <view>
+          订单编号
+        </view>
+        <view>
+          {{item.ordersn}}
+        </view>
+      </view>
+      <view class='box1'>
+        <view>
+          购买者
+        </view>
+        <view>
+        <image src='{{item.memberinfo.avatar}}' class='img3'></image>
+          {{item.memberinfo.nickname}}
+        </view>
+      </view>
+      <view class='box1'>
+        <view>
+          合计
+        </view>
+        <view>
+          ￥99.99
+        </view>
+      </view>
+      <view class='box2'>
+        <view>
+          收入
+        </view>
+        <view>
+          ￥{{item.comeinprice}}
+        </view>
+      </view>
+
+
+    </view>
+  </scroll-view>
+
+  
+
+
+
+</view>

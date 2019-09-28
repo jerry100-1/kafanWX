@@ -1,0 +1,511 @@
+<view class="myAllOrderList">
+   <view class="myAllOrderListInner">
+            <view class="listNavTitle">
+            <view class="navView {{selected?'red':'default'}}" bindtap="selected">全部</view>
+            <view class="navView {{selected4?'red':'default'}}" bindtap="selected4">已关闭</view>
+            <view class="navView {{selected2?'red':'default'}}" bindtap="selected2">待付款</view>
+            <view class="navView {{selected7?'red':'default'}}" bindtap="selected7">待发货</view>
+            <view class="navView {{selected5?'red':'default'}}" bindtap="selected5">待收货</view>
+            <view class="navView {{selected3?'red':'default'}}" bindtap="selected3">待自提</view>
+            <view class="navView {{selected6?'red':'default'}}" bindtap="selected6">已完成</view>
+
+  
+          </view>
+   
+   </view>
+
+ <view class="wrapRespectiveContent">
+         <!-- 全部订单 -->
+          <view class="unuseContentInner {{selected?'show':'hidden'}}">
+            <!-- 这是全部订单的内容  -->
+            <view class="unuseContentInnerCtn" wx:for="{{myallOrderList}}" wx:key="key">
+                        <!-- 整个店面购买商品模型1 -->
+              <view class="unuseContentInnerCtnModal">
+
+                   <!-- 标题部分 -->
+                  <view class="unuseContentCtnTop">
+                      <view class="unuseContentCtnTopLeft">
+                        <image class="unCtnTopLeftImg" src="../../../images/h-48.png"></image>
+                        <text class="unCtnTopLeftText">卡凡美发店</text> 
+                      </view>
+                      <view class="unuseContentCtnTopRight" wx:if="{{item.status==-1}}">已关闭</view> 
+                      <view class="unuseContentCtnTopRight" wx:elif="{{item.status==0}}">未支付</view>    
+                      <view class="unuseContentCtnTopRight" wx:elif="{{item.status==1}}">待发货</view>    
+                      <view class="unuseContentCtnTopRight" wx:elif="{{item.status==2}}">待收货</view>    
+                      <view class="unuseContentCtnTopRight" wx:elif="{{item.status==3}}">待自提</view> 
+                      <view class="unuseContentCtnTopRight" wx:else="{{item.status==4}}">已完成</view>                    
+                  </view>
+
+                   <!-- 一件商品 -->
+                    <view class="oneProduct" wx:for="{{item.ordergoodsinfo}}" wx:for-item="subgoodItem" wx:key="{{key}}">
+                      <view class="unuseCtnMain">
+                          <view class="unuseCtnMainLeft">
+                            <image src="{{subgoodItem.optioninfo.thumb}}"></image>
+                          </view>
+                          <view class="unuseCtnMainRight1">
+                              <text class="kkmmoopp1">{{subgoodItem.goodsinfo.title}}</text>
+                              <text class="kkmmoopp2">{{subgoodItem.goodsinfo.description}}</text>
+                              <text class="kkmmoopp3">{{subgoodItem.optioninfo.optiontitle}}</text>
+                          
+                          </view>
+                          <view class="unuseCtnMainRight2">
+                              <text class="unuseCtn2Text1">￥{{subgoodItem.totalprice}}</text>
+                              <text class="unuseCtn2Text2">X{{subgoodItem.buynum}}</text>
+                          </view>
+                      
+                      </view>
+                    </view>
+            <!-- 已关闭-1  待付款0  待发货1  待收货2  待自提3 已完成4 -->
+                    <!-- 这里是结算部分 -->
+                  <view class="unuseCtnTopRightBot">
+                        <text class="dynimicText1">{{item.receipttype==1?'门店自提':'物流配送'}}</text>
+                        <text class="dynimicText2">订单号:{{item.ordersn}}</text>
+                        <text class="dynimicText3">购买时间:{{item.paytime.date}}</text>
+                        <text class="dynimicText4">实付金额:￥{{item.orderprice}}</text>
+                        <view class="wrapThreeBtn">
+                             <view class="oneBtnOne" wx:if="{{item.status==4}}">评价</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==-1||item.status==4||item.status==0}}">删除订单</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==0}}">去付款</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==2||item.status==4}}">查看物流</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==1||item.status==2||item.status==3}}">退款退货</view>
+                             <view style='border-color:#00d3c2;color:#00d3c2;' class="oneBtnOne" wx:if="{{item.status==2}}">确认收货</view>
+                        
+                        </view>
+                  </view>
+                   <!-- 这里是底部线条 -->
+                   <view class="bottTextLine"></view>
+              </view>
+
+              <view style="font-size:28rpx;" class="unuseContentInnerCtnModal" wx:if="{{myallOrderList==''}}">
+                 暂无任何订单!!!
+              </view>
+            
+            </view>
+          </view>
+          <!-- 待付款 -->
+          <view class="unuseContentInner {{selected2?'show':'hidden'}}">
+                  <!-- 这是待付款订单的内容  -->
+            
+             <view class="unuseContentInnerCtn" wx:if="{{myNeedPayOrder!=''}}" wx:for="{{myNeedPayOrder}}" wx:key="key">
+                        <!-- 整个店面购买商品模型1 -->
+              <view class="unuseContentInnerCtnModal">
+
+                   <!-- 标题部分 -->
+                  <view class="unuseContentCtnTop">
+                      <view class="unuseContentCtnTopLeft">
+                        <image class="unCtnTopLeftImg" src="../../../images/h-48.png"></image>
+                        <text class="unCtnTopLeftText">卡凡美发店</text> 
+                      </view>
+                      <view class="unuseContentCtnTopRight">待付款</view>           
+                  </view>
+
+                   <!-- 一件商品 -->
+                    <view class="oneProduct" wx:for="{{item.ordergoodsinfo}}" wx:for-item="subgoodItem" wx:key="{{key}}">
+                      <view class="unuseCtnMain">
+                          <view class="unuseCtnMainLeft">
+                            <image src="{{subgoodItem.optioninfo.thumb}}"></image>
+                          </view>
+                          <view class="unuseCtnMainRight1">
+                              <text class="kkmmoopp1">{{subgoodItem.goodsinfo.title}}</text>
+                              <text class="kkmmoopp2">{{subgoodItem.goodsinfo.description}}</text>
+                              <text class="kkmmoopp3">{{subgoodItem.optioninfo.optiontitle}}</text>
+                          
+                          </view>
+                          <view class="unuseCtnMainRight2">
+                              <text class="unuseCtn2Text1">￥{{subgoodItem.totalprice}}</text>
+                              <text class="unuseCtn2Text2">X{{subgoodItem.buynum}}</text>
+                          </view>
+                      
+                      </view>
+                    </view>
+        
+                    <!-- 这里是结算部分 -->
+                  <view class="unuseCtnTopRightBot">
+                        <text class="dynimicText1">{{item.receipttype==1?'门店自提':'物流配送'}}</text>
+                        <text class="dynimicText2">订单号:{{item.ordersn}}</text>
+                        <text class="dynimicText3">购买时间:{{item.paytime.date}}</text>
+                        <text class="dynimicText4">实付金额:￥{{item.orderprice}}</text>
+                        <view class="wrapThreeBtn wrapTwoBtnKK">
+                             <view catchtap='deleteTheOrder' data-orderid='{{item.id}}' class="oneBtnOne">删除订单</view>
+                             <view class="oneBtnOne" style='display:none'></view>
+                           
+                             <view style='border-color:#00d3c2;color:#00d3c2;' class="oneBtnOne">去付款</view>
+                        
+                        </view>
+                  </view>
+                   <!-- 这里是底部线条 -->
+                   <view class="bottTextLine"></view>
+              </view>
+            
+             </view>
+             <view style="font-size:28rpx;" class="unuseContentInnerCtn" wx:if="{{myNeedPayOrder==''}}">
+                 暂无待付款订单!!!
+             </view>
+
+
+          </view>   
+
+          <!-- 待自提 -->
+          <view class="unuseContentInner {{selected3?'show':'hidden'}}">
+                      <!-- 这是待自提订单的内容  -->
+            
+             <view class="unuseContentInnerCtn"wx:if="{{myselfMention!=''}}" wx:for="{{myselfMention}}" wx:key="key">
+                        <!-- 整个店面购买商品模型1 -->
+              <view class="unuseContentInnerCtnModal">
+
+                   <!-- 标题部分 -->
+                  <view class="unuseContentCtnTop">
+                      <view class="unuseContentCtnTopLeft">
+                        <image class="unCtnTopLeftImg" src="../../../images/h-48.png"></image>
+                        <text class="unCtnTopLeftText">卡凡美发店</text> 
+                      </view>
+                      <view class="unuseContentCtnTopRight">待自提</view>           
+                  </view>
+
+                   <!-- 一件商品 -->
+                    <view class="oneProduct" wx:for="{{item.ordergoodsinfo}}" wx:for-item="subgoodItem" wx:key="{{key}}">
+                      <view class="unuseCtnMain">
+                          <view class="unuseCtnMainLeft">
+                            <image src="{{subgoodItem.optioninfo.thumb}}"></image>
+                          </view>
+                          <view class="unuseCtnMainRight1">
+                              <text class="kkmmoopp1">{{subgoodItem.goodsinfo.title}}</text>
+                              <text class="kkmmoopp2">{{subgoodItem.goodsinfo.description}}</text>
+                              <text class="kkmmoopp3">{{subgoodItem.optioninfo.optiontitle}}</text>
+                          
+                          </view>
+                          <view class="unuseCtnMainRight2">
+                              <text class="unuseCtn2Text1">￥{{subgoodItem.totalprice}}</text>
+                              <text class="unuseCtn2Text2">X{{subgoodItem.buynum}}</text>
+                          </view>
+                      
+                      </view>
+                    </view>
+        
+                    <!-- 这里是结算部分 -->
+                  <view class="unuseCtnTopRightBot">
+                        <text class="dynimicText1">{{item.receipttype==1?'门店自提':'物流配送'}}</text>
+                        <text class="dynimicText2">订单号:{{item.ordersn}}</text>
+                        <text class="dynimicText3">购买时间:{{item.paytime.date}}</text>
+                        <text class="dynimicText4">实付金额:￥{{item.orderprice}}</text>
+                        <view class="wrapThreeBtn">
+                             <view class="oneBtnOne" wx:if="{{item.status==4}}">评价</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==-1||item.status==4||item.status==0}}">删除订单</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==0}}">去付款</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==2||item.status==4}}">查看物流</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==1||item.status==2||item.status==3}}">退款退货</view>
+                             <view style='border-color:#00d3c2;color:#00d3c2;' class="oneBtnOne" wx:if="{{item.status==2}}">确认收货</view>
+                        
+                        </view>
+                  </view>
+                   <!-- 这里是底部线条 -->
+                   <view class="bottTextLine"></view>
+              </view>
+            
+             </view>
+             <view style='font-size:28rpx;' class="unuseContentInnerCtn" wx:if="{{myselfMention==''}}">
+                  暂无待自提订单!!!
+             </view>
+
+          </view> 
+          
+          <!-- 已关闭 -->
+          <view class="unuseContentInner {{selected4?'show':'hidden'}}">
+                                   <!-- 这是已关闭订单的内容  -->
+            
+             <view class="unuseContentInnerCtn" wx:if="{{myClosedOrderList!=''}}" wx:for="{{myClosedOrderList}}" wx:key="key">
+                        <!-- 整个店面购买商品模型1 -->
+              <view class="unuseContentInnerCtnModal">
+
+                   <!-- 标题部分 -->
+                  <view class="unuseContentCtnTop">
+                      <view class="unuseContentCtnTopLeft">
+                        <image class="unCtnTopLeftImg" src="../../../images/h-48.png"></image>
+                        <text class="unCtnTopLeftText">卡凡美发店</text> 
+                      </view>
+                      <view class="unuseContentCtnTopRight">已关闭</view>           
+                  </view>
+
+                   <!-- 一件商品 -->
+                    <view class="oneProduct" wx:for="{{item.ordergoodsinfo}}" wx:for-item="subgoodItem" wx:key="{{key}}">
+                      <view class="unuseCtnMain">
+                          <view class="unuseCtnMainLeft">
+                            <image src="{{subgoodItem.optioninfo.thumb}}"></image>
+                          </view>
+                          <view class="unuseCtnMainRight1">
+                              <text class="kkmmoopp1">{{subgoodItem.goodsinfo.title}}</text>
+                              <text class="kkmmoopp2">{{subgoodItem.goodsinfo.description}}</text>
+                              <text class="kkmmoopp3">{{subgoodItem.optioninfo.optiontitle}}</text>
+                          
+                          </view>
+                          <view class="unuseCtnMainRight2">
+                              <text class="unuseCtn2Text1">￥{{subgoodItem.totalprice}}</text>
+                              <text class="unuseCtn2Text2">X{{subgoodItem.buynum}}</text>
+                          </view>
+                      
+                      </view>
+                    </view>
+        
+                    <!-- 这里是结算部分 -->
+                  <view class="unuseCtnTopRightBot">
+                        <text class="dynimicText1">{{item.receipttype==1?'门店自提':'物流配送'}}</text>
+                        <text class="dynimicText2">订单号:{{item.ordersn}}</text>
+                        <text class="dynimicText3">购买时间:{{item.paytime.date}}</text>
+                        <text class="dynimicText4">实付金额:￥{{item.orderprice}}</text>
+                        <view class="wrapThreeBtn">
+                             <view class="oneBtnOne" wx:if="{{item.status==4}}">评价</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==-1||item.status==4||item.status==0}}">删除订单</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==0}}">去付款</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==2||item.status==4}}">查看物流</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==1||item.status==2||item.status==3}}">退款退货</view>
+                             <view style='border-color:#00d3c2;color:#00d3c2;' class="oneBtnOne" wx:if="{{item.status==2}}">确认收货</view>
+ 
+                        </view>
+                  </view>
+                   <!-- 这里是底部线条 -->
+                   <view class="bottTextLine"></view>
+              </view>
+            
+             </view>
+
+             <view class="unuseContentInnerCtn" style='font-size:28rpx;' wx:if="{{myClosedOrderList==''}}">
+               暂无已关闭订单！！！
+             </view>
+
+          </view>
+           <!-- 待发货 -->
+          <view class="unuseContentInner {{selected7?'show':'hidden'}}">
+                              <!-- 这是待发货订单的内容  -->
+            
+             <view class="unuseContentInnerCtn" wx:if="{{myToBeShippedOrder!=''}}" wx:for="{{myToBeShippedOrder}}" wx:key="key">
+                        <!-- 整个店面购买商品模型1 -->
+              <view class="unuseContentInnerCtnModal">
+
+                   <!-- 标题部分 -->
+                  <view class="unuseContentCtnTop">
+                      <view class="unuseContentCtnTopLeft">
+                        <image class="unCtnTopLeftImg" src="../../../images/h-48.png"></image>
+                        <text class="unCtnTopLeftText">卡凡美发店</text> 
+                      </view>
+                      <view class="unuseContentCtnTopRight">待发货</view>           
+                  </view>
+
+                   <!-- 一件商品 -->
+                    <view class="oneProduct" wx:for="{{item.ordergoodsinfo}}" wx:for-item="subgoodItem" wx:key="{{key}}">
+                      <view class="unuseCtnMain">
+                          <view class="unuseCtnMainLeft">
+                            <image src="{{subgoodItem.optioninfo.thumb}}"></image>
+                          </view>
+                          <view class="unuseCtnMainRight1">
+                              <text class="kkmmoopp1">{{subgoodItem.goodsinfo.title}}</text>
+                              <text class="kkmmoopp2">{{subgoodItem.goodsinfo.description}}</text>
+                              <text class="kkmmoopp3">{{subgoodItem.optioninfo.optiontitle}}</text>
+                          
+                          </view>
+                          <view class="unuseCtnMainRight2">
+                              <text class="unuseCtn2Text1">￥{{subgoodItem.totalprice}}</text>
+                              <text class="unuseCtn2Text2">X{{subgoodItem.buynum}}</text>
+                          </view>
+                      
+                      </view>
+                    </view>
+        
+                    <!-- 这里是结算部分 -->
+                  <view class="unuseCtnTopRightBot">
+                        <text class="dynimicText1">{{item.receipttype==1?'门店自提':'物流配送'}}</text>
+                        <text class="dynimicText2">订单号:{{item.ordersn}}</text>
+                        <text class="dynimicText3">购买时间:{{item.paytime.date}}</text>
+                        <text class="dynimicText4">实付金额:￥{{item.orderprice}}</text>
+                        <view class="wrapThreeBtn">
+                             <view class="oneBtnOne" wx:if="{{item.status==4}}">评价</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==-1||item.status==4||item.status==0}}">删除订单</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==0}}">去付款</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==2||item.status==4}}" data-expresssn="{{item.expresssn}}" data-express="{{item.express}}" catchtap='lookMyDetailTransport2'>查看物流</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==1||item.status==2||item.status==3}}">退款退货</view>
+                             <view style='border-color:#00d3c2;color:#00d3c2;' class="oneBtnOne" wx:if="{{item.status==2}}">确认收货</view>
+                        
+                        </view>
+                  </view>
+                   <!-- 这里是底部线条 -->
+                   <view class="bottTextLine"></view>
+              </view>
+
+
+            
+             </view>
+             <view class="{{myToBeShippedOrder==''}}" style='font-size:28rpx;'>暂无待发货订单</view>
+            
+
+
+
+
+
+
+          </view>
+           <!-- 待收货 -->
+          <view class="unuseContentInner {{selected5?'show':'hidden'}}">
+                   
+            <!-- 这是待收货订单的内容  -->
+
+             <view class="unuseContentInnerCtn" wx:if="{{myOrderToBeReceived!=''}}" wx:for="{{myOrderToBeReceived}}" wx:key="key">
+                        <!-- 整个店面购买商品模型1 -->
+              <view class="unuseContentInnerCtnModal">
+
+                   <!-- 标题部分 -->
+                  <view class="unuseContentCtnTop">
+                      <view class="unuseContentCtnTopLeft">
+                        <image class="unCtnTopLeftImg" src="../../../images/h-48.png"></image>
+                        <text class="unCtnTopLeftText">卡凡美发店</text> 
+                      </view>
+                      <view class="unuseContentCtnTopRight">待收货</view>           
+                  </view>
+
+                   <!-- 一件商品 -->
+                    <view class="oneProduct" wx:for="{{item.ordergoodsinfo}}" wx:for-item="subgoodItem" wx:key="{{key}}">
+                      <view class="unuseCtnMain">
+                          <view class="unuseCtnMainLeft">
+                            <image src="{{subgoodItem.optioninfo.thumb}}"></image>
+                          </view>
+                          <view class="unuseCtnMainRight1">
+                              <text class="kkmmoopp1">{{subgoodItem.goodsinfo.title}}</text>
+                              <text class="kkmmoopp2">{{subgoodItem.goodsinfo.description}}</text>
+                              <text class="kkmmoopp3">{{subgoodItem.optioninfo.optiontitle}}</text>
+                          
+                          </view>
+                          <view class="unuseCtnMainRight2">
+                              <text class="unuseCtn2Text1">￥{{subgoodItem.totalprice}}</text>
+                              <text class="unuseCtn2Text2">X{{subgoodItem.buynum}}</text>
+                          </view>
+                      
+                      </view>
+                    </view>
+        
+                    <!-- 这里是结算部分 -->
+                  <view class="unuseCtnTopRightBot">
+                        <text class="dynimicText1">{{item.receipttype==1?'门店自提':'物流配送'}}</text>
+                        <text class="dynimicText2">订单号:{{item.ordersn}}</text>
+                        <text class="dynimicText3">购买时间:{{item.paytime.date}}</text>
+                        <text class="dynimicText4">实付金额:￥{{item.orderprice}}</text>
+                        <view class="wrapThreeBtn">
+                             <view class="oneBtnOne" wx:if="{{item.status==4}}">评价</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==-1||item.status==4||item.status==0}}">删除订单</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==0}}">去付款</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==2||item.status==4}}" data-express="{{item.express}}" catchtap='lookMyDetailTransport2' data-expresssn="{{item.expresssn}}">查看物流</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==1||item.status==2||item.status==3}}">退款退货</view>
+                             <view style='border-color:#00d3c2;color:#00d3c2;' class="oneBtnOne" wx:if="{{item.status==2}}">确认收货</view>
+                        
+                        </view>
+                  </view>
+                   <!-- 这里是底部线条 -->
+                   <view class="bottTextLine"></view>
+              </view>
+            
+             </view>
+
+             <view class="unuseContentInnerCtn" style='font-size:28rpx;' wx:if="{{myOrderToBeReceived==''}}">
+                暂无待收货订单!!!
+             </view>
+
+             <!-- 查看物流内容的弹窗 -->
+             <view class="wrapToBeShippedOrder" wx:if="{{showTheTransportFlag}}">
+                  <view class="transportCtn">
+                         <view class="wraptranspo" wx:for="{{}}">
+                               <!-- 模型1 -->
+                              <view class="transpoModal">
+                                   <view class="transpoModalLeft"></view>
+                                   <view class="transpoModalRight"></view>
+                              </view>
+                               <!-- 模型1 -->
+                              <view class="transpoModal">
+                                   <view class="transpoModalLeft"></view>
+                                   <view class="transpoModalRight"></view>
+                              </view>
+                             
+
+                         </view>   
+
+                     <view class="wrapImh" catchtap='closeTheTransportModal'>
+
+                                <image src="../../../images/h-41.png"></image>
+                     </view>
+                  
+                  </view>
+
+             </view>
+
+             <!-- 查看物流内容的弹窗 -->
+
+
+          </view>
+           <!-- 已完成 -->
+          <view class="unuseContentInner {{selected6?'show':'hidden'}}">
+                             
+            <!-- 这是已完成订单的内容  -->
+
+             <view class="unuseContentInnerCtn" wx:if="{{myOrderHasFinished!=''}}" wx:for="{{myOrderHasFinished}}" wx:key="key">
+                        <!-- 整个店面购买商品模型1 -->
+              <view class="unuseContentInnerCtnModal">
+
+                   <!-- 标题部分 -->
+                  <view class="unuseContentCtnTop">
+                      <view class="unuseContentCtnTopLeft">
+                        <image class="unCtnTopLeftImg" src="../../../images/h-48.png"></image>
+                        <text class="unCtnTopLeftText">卡凡美发店</text> 
+                      </view>
+                      <view class="unuseContentCtnTopRight">待收货</view>           
+                  </view>
+
+                   <!-- 一件商品 -->
+                    <view class="oneProduct" wx:for="{{item.ordergoodsinfo}}" wx:for-item="subgoodItem" wx:key="{{key}}">
+                      <view class="unuseCtnMain">
+                          <view class="unuseCtnMainLeft">
+                            <image src="{{subgoodItem.optioninfo.thumb}}"></image>
+                          </view>
+                          <view class="unuseCtnMainRight1">
+                              <text class="kkmmoopp1">{{subgoodItem.goodsinfo.title}}</text>
+                              <text class="kkmmoopp2">{{subgoodItem.goodsinfo.description}}</text>
+                              <text class="kkmmoopp3">{{subgoodItem.optioninfo.optiontitle}}</text>
+                          
+                          </view>
+                          <view class="unuseCtnMainRight2">
+                              <text class="unuseCtn2Text1">￥{{subgoodItem.totalprice}}</text>
+                              <text class="unuseCtn2Text2">X{{subgoodItem.buynum}}</text>
+                          </view>
+                      
+                      </view>
+                    </view>
+        
+                    <!-- 这里是结算部分 -->
+                  <view class="unuseCtnTopRightBot">
+                        <text class="dynimicText1">{{item.receipttype==1?'门店自提':'物流配送'}}</text>
+                        <text class="dynimicText2">订单号:{{item.ordersn}}</text>
+                        <text class="dynimicText3">购买时间:{{item.paytime.date}}</text>
+                        <text class="dynimicText4">实付金额:￥{{item.orderprice}}</text>
+                        <view class="wrapThreeBtn">
+                             <view class="oneBtnOne" wx:if="{{item.status==4}}">评价</view>
+                             <view class="oneBtnOne" data-orderid="{{item.orderid}}" catchtap='deleteTheOrder' wx:if="{{item.status==-1||item.status==4||item.status==0}}">删除订单</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==0}}">去付款</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==2||item.status==4}}">查看物流</view>
+                             <view class="oneBtnOne" wx:if="{{item.status==1||item.status==2||item.status==3}}">退款退货</view>
+                             <view style='border-color:#00d3c2;color:#00d3c2;' class="oneBtnOne" wx:if="{{item.status==2}}">确认收货</view>
+                        
+                        </view>
+                  </view>
+                   <!-- 这里是底部线条 -->
+                   <view class="bottTextLine"></view>
+              </view>
+            
+             </view>
+
+             <view class="unuseContentInnerCtn" style='font-size:28rpx;' wx:if="{{myOrderHasFinished==''}}">
+                 暂无已完成订单!!!
+             </view>
+         
+          </view>          
+  </view>
+
+
+
+
+
+</view>

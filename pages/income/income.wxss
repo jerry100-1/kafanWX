@@ -1,0 +1,180 @@
+/* pages/income/income.wxss */
+
+.header{
+
+}
+.img1{
+  width:100%;
+  height:200rpx;
+  position: relative;
+  vertical-align:middle;
+}
+.img2{
+  width:128rpx;
+  height:200rpx;
+  vertical-align:middle;
+}
+.img3{
+  width:40rpx;
+  height:40rpx;
+  vertical-align:middle;
+  border-radius:50%;
+  overflow:hidden;
+}
+.text-deal{
+	    overflow : hidden;
+	    text-overflow: ellipsis;
+	    display: -webkit-box;
+	    -webkit-line-clamp: 1;
+	    -webkit-box-orient: vertical;
+	    word-break: break-all; /* 追加这一行代码 */
+	}
+
+
+
+
+.wz1{
+  position:absolute;
+  top:20rpx;
+  left:80rpx;
+  color:white;
+}
+.wz2{
+  position:absolute;
+  top:90rpx;
+  left:80rpx;
+  color: red;
+}
+.mini{
+  font-size:26rpx;
+
+}
+.ddd{
+  font-size:56rpx;
+}
+
+.text-o{
+  text-align: center;
+  display:inline-block;
+  font-size:26rpx;
+}
+.xzz{
+  color: #5adad9;
+  border-bottom:5rpx solid #5adad9;
+  padding-bottom:18rpx;
+}
+.fq{
+  color: #000;
+  border:none;
+}
+
+.box{
+  margin:20rpx;
+  background:white;
+  padding:20rpx;
+  border-radius:10rpx;
+}
+.box-t>view:nth-child(1){
+  font-size:26rpx;
+  display: inline-block;
+}
+.box-t>view:nth-child(2){
+  float:right;
+  font-size:20rpx;
+  margin-top:10rpx;
+  margin-right:10rpx;
+  background:#5ecbd2;
+  color:white;
+  padding:6rpx;
+  border-radius:10rpx;
+}
+
+.box-m{
+  margin-top:30rpx;
+  display:flex;
+  border-bottom:2rpx solid #ccc;
+  padding-bottom:20rpx;
+}
+.box-m-l{
+  display:inline-block;
+  flex: 1;
+  margin-right: 20rpx;
+}
+.box-m-r{
+  flex: 8;
+}
+.title{
+  display: flex;
+  font-size:36rpx;
+}
+.title>view:nth-child(1){
+  flex: 8;
+}
+.title>view:nth-child(2){
+  flex:3;
+  font-size:26rpx;
+  text-align:right;
+}
+.futitle{
+  font-size:30rpx;
+  margin-top: 20rpx;
+  display: flex;
+}
+.futitle>view:nth-child(1){
+  flex: 8;
+}
+.futitle>view:nth-child(2){
+  flex: 2;
+}
+.gg{
+  font-size:24rpx;
+  margin-top: 50rpx;
+}
+
+
+.box1{
+  display:flex;
+  margin-top:20rpx;
+  font-size:26rpx;
+  color:#666;
+}
+.box1>view:nth-child(1){
+  flex: 1;
+}
+.box1>view:nth-child(2){
+  flex: 2;
+  text-align: right;
+}
+
+
+.box2{
+  display:flex;
+  margin-top:20rpx;
+  color:#666;
+  font-size:32rpx;
+  font-weight:bold;
+}
+.box2>view:nth-child(1){
+  flex: 1;
+}
+.box2>view:nth-child(2){
+  flex: 2;
+  text-align: right;
+}
+
+
+.bigbox{
+  overflow:scroll;
+  position:absolute;
+  width:100%;
+  background:#f8f8f8;
+  left:0rpx;
+  top:260rpx;
+  height:78%;
+}
+::-webkit-scrollbar {
+    /* 滚动条整体部分 */
+    width: 6rpx;
+    height: 6rpx;
+    background-color: #f5f5f5;
+}

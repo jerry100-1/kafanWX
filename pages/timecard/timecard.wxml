@@ -1,0 +1,155 @@
+<view>
+  <!-- are you sure -->
+  <view class='header'>
+    <view class='{{xz1?"xx":"yy"}}' bindtap='xxz1'>
+      未使用
+    </view>
+    <view class='{{xz2?"xx":"yy"}}' bindtap='xxz2'>
+      已使用
+    </view>
+    <view class='{{xz3?"xx":"yy"}}' bindtap='xxz3'>
+      次卡核销
+    </view>
+  </view>
+
+
+  <view class='box'>
+    <block wx:for="{{mycard}}" wx:key="{{item}}">
+      <view wx:if="{{xz1}}" class='box1'>
+        <view class='box1-t'>
+          <image src='../../images/box-t.jpg' class='img1'></image>
+          <!-- <image src='{{item.optionsinfo.thumb}}' class='img1'></image> -->
+          <text class='box1-t-tit'>{{item.optionsinfo.optiontitle}}</text>
+        </view>
+
+        <view class='box1-b'>
+          <view class='box1-b-t text-deal' wx:if="{{item.verifgifttimes>0}}">
+            完成{{item.verifgifttimes}}次送价值{{item.couponinfo.price}}元的
+            <text style='color:rgb(0,207,207);font-size:30rpx;'>{{item.couponinfo.title}}</text>
+          </view>
+
+          <view class='box1-b-b'>
+            <view>
+              有效期:{{item.starttime.date}}-{{item.endtime.date}}
+            </view>
+            <view bindtap='zffwf' data-id='{{item.id}}' data-verifprice='{{item.verifprice}}'>
+              支付服务费
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <block wx:for="{{mycard}}" wx:key="{{item}}">
+      <view wx:if="{{xz2}}" class='box1'>
+        <view class='box1-t'>
+          <image src='../../images/box-t.jpg' class='img1'></image>
+          <!-- <image src='{{item.optionsinfo.thumb}}' class='img1'></image> -->
+          <text class='box1-t-tit'>{{item.optionsinfo.optiontitle}}</text>
+        </view>
+
+        <view class='box1-b'>
+          <view class='box1-b-t text-deal' wx:if="{{item.verifgifttimes>0}}">
+          完成{{item.verifgifttimes}}次送价值{{item.couponinfo.price}}元的
+          <text style='color:rgb(0,207,207);font-size:30rpx;'>{{item.couponinfo.title}}</text>
+          </view>
+
+          <view style='margin-bottom:10rpx;' class='box1-b-b'>
+            <view>
+              有效期:{{item.starttime.date}}-{{item.endtime.date}}
+            </view>
+            <view style='color:red;background:rgb(230,230,230);text-align:right;margin:0;margin-left:100rpx;'>
+              已领取
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <block wx:for="{{usablecardcode}}" wx:key="{{item}}">
+      <view wx:if="{{xz3 && item.total>0}}">
+        <view class='box3'>
+          <view>
+            {{item.optionsinfo.optiontitle}}
+          </view>
+          <view>
+            购买时间：{{item.paytime.datetime}}
+          </view>
+          <view>
+            <text>实付金额：{{item.price}}</text>
+            <text class='hx4' wx:if="{{item.total>0 && item.unused == 0}}">已核销</text>
+            <text class='hx3' wx:if="{{item.total>0 || item.total == 0}}" data-id="{{item.id}}"  catchtap='hx'>立即核销</text>
+          </view>
+        </view>
+      </view>
+
+      <view wx:if="{{xz3 && item.total==0}}">
+        <view class='box4'>
+          <image src='../../images/box1.png' class='img2'></image>
+          <view class='box4-1'>
+            {{item.optionsinfo.optiontitle}}
+          </view>
+          <view class='box4-2'>
+            {{item.price}}/次
+          </view>
+          <view class='box4-3' style='font-size:28rpx;'>
+            <text class='hx4' wx:if="{{item.total>0 && item.unused == 0}}">已核销</text>
+            <text class='hx3' wx:if="{{item.total>0 || item.total == 0}}" data-id="{{item.id}}"  bindtap='hx'>立即核销</text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+  </view>
+
+
+  <view class='zz' wx:if='{{tcbol}}'></view>
+  <view class='tc' wx:if='{{tcbol}}'>
+      <view class='tcss'>
+        <image src='{{imghx}}' class='img4'></image>
+      </view>
+      <view class='tcxx'>
+        <image src='../../images/xxxx.png' class='img3' bindtap='qx'></image>
+      </view>
+  </view>
+
+  <view class='zz1' wx:if="{{zstcbol}}"></view>
+  <scroll-view class='tc1' wx:if="{{zstcbol}}" scroll-y='true' style="height:600px">
+    <view style='text-align:center;color:rgb(90,223,218);'>
+      恭喜您已全部点亮
+    </view>
+    <!-- giftinfo -->
+    <!-- mycard -->
+    <block wx:for="{{giftinfo}}" wx:key="{{item}}">
+      <view class='box1' style='padding-bottom:10rpx'>
+        <view class='box1-t'>
+          <image src='../../images/dlqt.png' class='img1'></image>
+          <!-- <image src='{{item.optionsinfo.thumb}}' class='img1'></image> -->
+          <text class='box1-t-tit'>{{item.optionsinfo.optiontitle}}</text>
+        </view>
+
+        <view class='box1-b'>
+          <view class='box1-b-t text-deal' wx:if="{{item.verifgifttimes>0}}">
+            完成{{item.verifgifttimes}}次送价值{{item.couponinfo.price}}元的
+            <text style='color:rgb(0,207,207);font-size:30rpx;'>{{item.couponinfo.title}}</text>
+          </view>
+
+          <view class='box1-b-b'>
+            <view>
+              有效期:{{item.starttime.date}}-{{item.endtime.date}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='lq'>
+      <view>
+        <text class='lq-1' bindtap='shlq'>稍后领取</text>
+      </view>
+      <view>
+        <text class='lq-2' bindtap='ljlq'>立即领取</text>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>

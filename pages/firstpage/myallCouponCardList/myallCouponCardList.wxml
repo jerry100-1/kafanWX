@@ -1,0 +1,453 @@
+<view class="myAllCounponCartList">
+
+  <view class="myAllCounponCartListInner">
+    <view class="listNavTitle">
+      <view class="navView {{selected?'red':'default'}}" bindtap="selected">未使用(10)</view>
+      <view class="navView {{selected2?'red':'default'}}" bindtap="selected2">已使用</view>
+      <view class="navView {{selected3?'red':'default'}}" bindtap="selected3">已过期(10)</view>
+    </view>
+    <view class="wrapRespectiveContent">
+      <!-- 未使用 -->
+      <view class="unuseContentInner {{selected?'show':'hidden'}}">
+        <!-- 以下是未使用的内容 -->             
+          <view class="respectiveCartBonus">
+              <!-- 商品现金券部分 -->
+              <view class="respectiveCartBonusTitle">商品现金券</view>
+                <!-- 商品现金券列表 -->
+              <view class="wrapAllCardList" wx:if="{{myallCouponNotUseList}}">
+                  <view class="cashVouncherSample">
+                      <!-- ------------------------- -->
+
+                      <view class="WrapCouponCardDemo">
+                          <!-- 通用券模型 -->
+                          <view class="CashCouponCardDemo" wx:if="{{item.type===1}}"  wx:for="{{myallCouponNotUseList}}" wx:key="key">
+                                <view class="CashCouponCardDemoLeft">
+                                  <text class="leftChinaIcon">￥</text>
+                                  <text class="rightNumberText">
+                                        <text class="ffText1">{{item.price}}</text>
+                                        <text class="ffText2">满{{item.fullless}}</text>
+                                  </text>
+                                </view>
+                                <view class="CashCouponCardDemoRight">
+                                    <text class="CashCouponText1">{{item.title}}</text>
+                                    <text class="CashCouponText2">{{item.starttime.date}}-{{item.endtime.date}}</text>
+                                    <view class="CashCouponText3 myCashCouponText3">
+                                      <view class="myCashText3InnBtn1">
+                                        立即使用
+                                      </view>
+                                      <view class="myCashText3InnBtn2">
+                                        立即分享
+                                      </view>
+                                    </view>
+                                      <!-- 线条 -->
+                                    <view class="lineShowView wwlineShowView"></view>
+                                      <!-- 数量 -->
+                                      <view class="countNumView vvcountNumView">X{{item.num}}</view>
+                                </view>
+                          </view>
+
+                          <!-- 单品券模型 -->
+                          <view class="CashCouponCardDemo" wx:if="{{item.type===2}}"  wx:for="{{myallCouponNotUseList}}" wx:key="key">
+                                <view class="CashCouponCardDemoLeft">
+                                  <text class="leftChinaIcon">￥</text>
+                                  <text class="rightNumberText">
+                                        <text class="ffText1">{{item.price}}</text>
+                                        <text class="ffText2">满{{item.fullless}}</text>
+                                  </text>
+                                </view>
+                                <view class="CashCouponCardDemoRight">
+                                    <text class="CashCouponText1">{{item.title}}</text>
+                                    <text                  class="CashCouponText2">{{item.starttime.date}}-{{item.endtime.date}}</text>
+                                    <view class="CashCouponText3 myCashCouponText3">
+                                      <view class="myCashText3InnBtn1">
+                                        立即使用
+                                      </view>
+                                      <view class="myCashText3InnBtn2">
+                                        立即分享
+                                      </view>
+                                    </view>
+                                      <!-- 线条 -->
+                                    <view class="lineShowView wwlineShowView"></view>
+                                      <!-- 数量 -->
+                                      <view class="countNumView vvcountNumView">X{{item.num}}</view>
+                                </view>
+                          </view>  
+
+                      </view>
+
+
+                    <!-- ------------------------------- -->
+                  </view>
+              </view>  
+                <!-- 服务现金券部分  -->
+              <view class="respectiveCartBonusTitle">服务现金券</view>
+                <!-- 服务现金券列表 -->
+              <view class="wrapAllServiceCashCard" wx:if="{{myallCouponNotUseList}}">
+                        <!-- 服务现金券模型 -->
+                      <view class="serviceCashCardSample" wx:if="{{item.type===3}}" wx:for="{{myallCouponNotUseList}}" wx:key="key">
+                        <view class="serviceCardSampleInner" style='background:url({{item.thumb}})'>
+                            <view class="countNumText vvcountNumView2">X{{item.num}}</view>
+                            <view class="absoluteElement1">立即使用</view>
+                            <view class="absoluteElement2">立即分享</view>
+                            
+                            <view class="absoluteElement3 hhabsoluteElement3">{{(item.starttime.date)}}-{{(item.endtime.date)}}</view>
+                            <!-- <image class="cashimg" src="{{item.thumb}}"></image> -->
+                        </view>
+                      </view>
+                
+                    
+              </view>
+
+
+          </view>
+        <!--以上是未使用的内容 -->
+      </view>
+      <!-- 已使用 -->
+      <view class="usedContentInner {{selected2?'show':'hidden'}}">
+        <!-- 以下是已使用的内容 -->
+        <view class="respectiveCartBonus" >
+          <!-- 商品现金券部分 -->
+          <view class="respectiveCartBonusTitle">商品现金券</view>
+          <!-- 商品现金券列表 -->
+          <view class="wrapAllCardList" wx:if="{{myallCouponHavaUseList}}">
+            <view class="cashVouncherSample">
+              <!-- ------------------------- -->
+
+              <view class="WrapCouponCardDemo">
+
+                <!-- 现金券模型 -->
+                <view class="CashCouponCardDemo CashCouponCardDemo2" wx:if="{{item.type==1}}" wx:for="{{myallCouponHavaUseList}}" wx:key="key">
+                  <view class="CashCouponCardDemoLeft CashCouponCardDemoLeft2">
+                    <text class="leftChinaIcon">￥</text>
+                    <text class="rightNumberText">
+                            <text class="ffText1">{{item.price}}</text>
+                    <text class="ffText2">满{{item.fullless}}</text>
+                    </text>
+                  </view>
+                  <view class="CashCouponCardDemoRight">
+                    <text class="CashCouponText1">{{item.title}}</text>
+                    <text class="CashCouponText2">{{item.starttime.date}}-{{item.endtime.date}}</text>
+                    <view class="CashCouponText3 myCashCouponText3">
+                      <view class="myCashText3InnBtn1 addmyCashText3InnBtn1">
+                        立即使用
+                      </view>
+                      <view class="myCashText3InnBtn2 addmyCashText3InnBtn1">
+                        立即分享
+                      </view>
+                    </view>
+                    <!-- 线条 -->
+                    <view class="lineShowView oolineShowView"></view>
+                    <!-- 数量 -->
+                    <view class="countNumView cccountNumView">X{{item.num}}</view>
+                  </view>
+
+
+
+                </view>
+
+                <!-- 现金券模型 -->
+                <view class="CashCouponCardDemo CashCouponCardDemo2"  wx:if="{{item.type==2}}" wx:for="{{myallCouponHavaUseList}}" wx:key="key">
+                  <view class="CashCouponCardDemoLeft CashCouponCardDemoLeft2">
+                    <text class="leftChinaIcon">￥</text>
+                    <text class="rightNumberText">
+                            <text class="ffText1">{{item.price}}</text>
+                    <text class="ffText2">满{{item.fullless}}</text>
+                    </text>
+                  </view>
+                  <view class="CashCouponCardDemoRight">
+                    <text class="CashCouponText1">{{item.title}}</text>
+                    <text class="CashCouponText2">{{item.starttime.date}}-{{item.endtime.date}}</text>
+                    <view class="CashCouponText3 myCashCouponText3">
+                      <view class="myCashText3InnBtn1 addmyCashText3InnBtn1">
+                        立即使用
+                      </view>
+                      <view class="myCashText3InnBtn2 addmyCashText3InnBtn1">
+                        立即分享
+                      </view>
+                    </view>
+                    <!-- 线条 -->
+                    <view class="lineShowView oolineShowView"></view>
+                    <!-- 数量 -->
+                    <view class="countNumView cccountNumView">X{{item.num}}</view>
+                  </view>
+
+
+
+                </view>
+
+
+
+              </view>
+
+
+              <!-- ------------------------------- -->
+            </view>
+          </view>
+          <!-- 服务现金券部分  -->
+          <view class="respectiveCartBonusTitle">{{myallCouponHavaUseList.length==0?'myallCouponHavaUseList':'暂无服务现金券'}}</view>
+          <!-- 服务现金券列表 -->
+          <view class="wrapAllServiceCashCard">
+            <!-- 服务现金券模型 -->
+
+
+            <view wx:for="{{myallCouponHavaUseList}}" wx:if="{{item.type==3}}" class="serviceCashCardSample serviceCashCardSample2">
+              <view class="serviceCardSampleInner serviceCardSampleInner2" style="background:url('{{item.thumb}}')">
+                <view class="countNumText">X{{item.num}}</view>
+                <view class="absoluteElement1 addabsoluteElement1">立即使用</view>
+                <view class="absoluteElement2 addabsoluteElement2">立即分享</view>
+                <view class="absoluteElement3 hhabsoluteElement3">{{(item.starttime.date)}}-{{(item.endtime.date)}}</view>
+              </view>
+
+            </view>
+            
+           
+            <!-- 服务现金券模型 -->
+
+
+          </view>
+
+
+        </view>
+
+        <!--以上是已使用的内容 -->
+      </view>
+      <!-- 已过期 -->
+      <view class="expiredContentInner {{selected3?'show':'hidden'}}">
+        <!-- 以下是已过期的内容 -->
+        <view class="respectiveCartBonus">
+          <!-- 商品现金券部分 -->
+          <view class="respectiveCartBonusTitle">{{myallCouponExpiredList.length==0?'暂无商品现金券':'商品现金券'}}</view>
+          <!-- 商品现金券列表 -->
+          <view class="wrapAllCardList">
+            <view class="cashVouncherSample">
+              <!-- ------------------------- -->
+
+              <view class="WrapCouponCardDemo" wx:if="{{myallCouponExpiredList}}">
+
+                  <!-- 现金券模型 -->
+                  <view class="CashCouponCardDemo CashCouponCardDemo2" wx:for="{{myallCouponExpiredList}}" wx:if="{{item.type==1}}" wx:key="key">
+                      <view class="circleIconShow">
+                        <view class="circleIconShowInner"></view>
+                        <view class="expiredIcon">已过期</view>
+                      </view> 
+
+                    <view class="CashCouponCardDemoLeft CashCouponCardDemoLeft2">
+                      <text class="leftChinaIcon">￥</text>
+                      <text class="rightNumberText">
+                              <text class="ffText1">{{item.price}}</text>
+                      <text class="ffText2">满{{item.fullless}}</text>
+                      </text>
+                    </view>
+                    <view class="CashCouponCardDemoRight">
+                      <text class="CashCouponText1">{{item.title}}</text>
+                      <text class="CashCouponText2">{{item.starttime.date}}-{{item.endtime.date}}</text>
+                      <view class="CashCouponText3 myCashCouponText3">
+                        <view class="myCashText3InnBtn1 addmyCashText3InnBtn1">
+                          立即使用
+                        </view>
+                        <view class="myCashText3InnBtn2 addmyCashText3InnBtn1">
+                          立即分享
+                        </view>
+                      </view>
+                      <!-- 线条 -->
+                      <view class="lineShowView yylineShowView"></view>
+                      <!-- 数量 -->
+                      <view class="countNumView">X{{item.num}}</view>
+
+                    
+
+                    </view>
+
+
+
+                  </view>
+                  <!-- 现金券模型 -->
+                  <view class="CashCouponCardDemo CashCouponCardDemo2" wx:for="{{myallCouponExpiredList}}" wx:if="{{item.type==2}}" wx:key="key">
+                      <view class="circleIconShow">
+                        <view class="circleIconShowInner"></view>
+                        <view class="expiredIcon">已过期</view>
+                      </view> 
+
+                    <view class="CashCouponCardDemoLeft CashCouponCardDemoLeft2">
+                      <text class="leftChinaIcon">￥</text>
+                      <text class="rightNumberText">
+                              <text class="ffText1">{{item.price}}</text>
+                      <text class="ffText2">满{{item.fullless}}</text>
+                      </text>
+                    </view>
+                    <view class="CashCouponCardDemoRight">
+                      <text class="CashCouponText1">全场通用</text>
+                      <text class="CashCouponText2">{{item.starttime.date}}-{{item.endtime.date}}</text>
+                      <view class="CashCouponText3 myCashCouponText3">
+                        <view class="myCashText3InnBtn1 addmyCashText3InnBtn1">
+                          立即使用
+                        </view>
+                        <view class="myCashText3InnBtn2 addmyCashText3InnBtn1">
+                          立即分享
+                        </view>
+                      </view>
+                      <!-- 线条 -->
+                      <view class="lineShowView yylineShowView"></view>
+                      <!-- 数量 -->
+                      <view class="countNumView">X{{item.num}}</view>
+
+                    
+
+                    </view>
+
+
+
+                  </view>
+
+
+
+              </view>
+
+              <!-- ------------------------------- -->
+            </view>
+          </view>
+          <!-- 服务现金券部分  -->
+          <view class="respectiveCartBonusTitle">{{myallCouponExpiredList.length==0?'暂无服务现金券':'服务现金券'}}</view>
+          <!-- 服务现金券列表 -->
+          <view class="wrapAllServiceCashCard" wx:if="{{myallCouponExpiredList}}">
+            <!-- 服务现金券模型 -->
+                <view class="serviceCashCardSample serviceCashCardSample2" wx:for="{{myallCouponExpiredList}}" wx:key="key" wx:if="{{item.type===3}}">
+                  <view class="serviceCardSampleInner serviceCardSampleInner2">
+                    <view class="countNumText">X{{item.num}}</view>
+                    <view class="absoluteElement1 addabsoluteElement1">立即使用</view>
+                    <view class="absoluteElement2 addabsoluteElement2">立即分享</view>
+                     <view class="absoluteElement3 hhabsoluteElement3">{{(item.starttime.datetime)}}-{{(item.endtime.datetime)}}</view>
+
+                  </view>
+                </view>
+            
+          </view>
+
+
+        </view>
+        <!-- 以上是已过期的内容 -->
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+</view>
+
+  <!-- 分享商品优惠券 -->
+  <!-- 第一步:分享商品优惠券图片弹框 -->
+  <view class="showShareModal"  wx:if="{{hidden&&hidden1}}">
+      <view class="showShareModalInner">
+        <image src="../../../images/h-42.png"></image>
+        <button class="clearBack" open-type='share' class="shareImgText">分享图片</button>
+     </view> 
+
+
+    
+      <!-- 第二步,分享的具体内容 -->  
+      <view class="respectiveShareProduct">
+          <view class="shareProductTop">
+             <view class="shareProductTopLeft">
+              <image src="../../../images/h-43.png"></image>
+             </view>
+             <view class="shareProductTopRight">
+                <view class="shareTitle">我是某某某</view>
+                <view class="shareMessage">
+                  <textarea placeholder="精品商城,快来购买吧" auto-focus />
+                </view>
+             </view>
+          </view>
+
+          <!-- ---------------------- -->
+             <!-- 现金券模型 -->
+               <view class="WrapCashCouponCardDemo">
+                <view class="CashCouponCardDemo">
+                   <view class="CashCouponCardDemoLeft">
+                     <text class="leftChinaIcon">￥</text>
+                     <text class="rightNumberText">
+                          <text class="ffText1">70</text>
+                          <text class="ffText2">满300</text>
+                     </text>
+                   </view>
+                   <view class="CashCouponCardDemoRight">
+                       <text class="CashCouponText1">全场通用</text>
+                       <text class="CashCouponText2">2019.05.05-02019.07.07</text>
+                       <view class="CashCouponText3 addAnotherCashCouponText3">
+                          <view class="countNumWWWPart" catchtap='plusShareCountNumber'>+</view>
+                          <view class="countNumWWWPart">{{shareCountNumber}}</view>
+                          <view class="countNumWWWPart" catchtap='minusShareCountNumber'>-</view>
+                       </view>
+                   </view>
+                </view>
+              </view>
+          <!-- ---------------------- -->
+    
+          <view class="fetchSoonView">立即领取</view>
+
+          <view class="closeTheshowShareModal">
+            <image catchtap='closeTheModal' src="../../../images/h-44.png"></image>
+          </view>
+    
+      </view>
+
+  </view>
+<!-- ------------------------------------------------------------- -->
+  <!-- 分享服务券 -->
+  <!-- 第一步:分享服务券图片弹框 -->
+
+  <view class="showShareModal"  wx:if="{{hidden&&hidden2}}">
+      <view class="showShareModalInner">
+        <image src="../../../images/h-42.png"></image>
+        <view class="shareImgText">分享图片</view>
+     </view> 
+
+
+    
+      <!-- 第二步,分享的具体内容 -->  
+      <view class="respectiveShareProduct">
+          <view class="shareProductTop">
+             <view class="shareProductTopLeft">
+              <image src="../../../images/h-43.png"></image>
+             </view>
+             <view class="shareProductTopRight">
+                <view class="shareTitle">我是某某某</view>
+                <view class="shareMessage">
+                  <textarea placeholder="精品商城,快来购买吧" auto-focus />
+                </view>
+             </view>
+          </view>
+
+          <!-- ---------------------- -->
+             <!-- 现金券模型 -->
+               <view class="WrapCashCouponCardDemo">
+                <view class="CashCouponCardDemo shareCashCouponCardDemo">
+                       <view class="shareCashCardDemoInner"></view>
+                </view>
+
+
+                 <view class="computeNumberIcon">
+                     <view class="commonStyleIcon" catchtap='computedNumPlus'>+</view>
+                     <view class="commonStyleIcon" >{{shareCountNumber2}}</view>
+                     <view class="commonStyleIcon"  catchtap='computedNumMinus'>-</view>
+                 </view>
+
+              </view>
+          <!-- ---------------------- -->
+  
+
+          <view class="closeTheshowShareModal">
+            <image catchtap='closeTheModal2' src="../../../images/h-44.png"></image>
+          </view>
+    
+      </view>
+
+  </view>
+
+
+
+
+
+
+

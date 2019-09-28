@@ -1,0 +1,139 @@
+<import src="../template/template.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+
+<!-- 如果购物车为空 -->
+  <view wx:if="{{userfulProductList==''}}" >
+        <view class="emptyImg">
+          <image src="../../images/h-30.png"></image>
+          <text class="emptyImg-Text">购物车为空!请添加商品</text>
+        </view>
+   </view>
+<view class="wrapshoppingcart" wx:if="{{userfulProductList!=''}}">
+
+<!-- 如果购物车不为空 -->
+
+  <view   class="wrapallproduct">
+      <view class="wrapUserfulProduct">
+        <!-- <text class="userfulProductTitle">共{{}}件宝贝</text> -->
+        <!-- 需要结算的商品 -->
+        <view class="userfulProductContent" >
+        <view wx:for="{{userfulProductList}}" wx:key="unique">
+            <!-- 模型1  -->
+            <view class="userProductSample1" data-post="{{item.id}}">
+               <view class="userProductSample1-1">
+            <checkbox-group bindchange="checkboxChange" catchtap='onStopEvent' data-checkid='{{index}}'>
+            <checkbox class='cart_checkbox' data-num="{{item.num}}"     data-scaleid="{{item.optionsinfo.id}}" data-goodsid="{{item.goodsid}}" bindtap='onCalcSelect' catchtap='onStopEvent'  checked="{{selectedAllStatus}}" ></checkbox>
+          </checkbox-group>
+               </view>
+               <view class="userProductSample1-2">
+                 <view class="userPr2Inner">
+                   <image src="{{item.optionsinfo.thumb}}"></image>
+                 </view>
+               </view>
+               <view class="userProductSample1-3">
+                 <text class="userPr3Inner-1">{{item.goodsinfo.title}}</text>
+                 <text class="userPr3Inner-2">{{item.optionsinfo.optiontitle}}</text>
+                 <text class="userPr3Inner-3">
+                      <text class="smallText">￥</text> 
+                      <text>{{item.optionsinfo.price}}</text>      
+                </text>
+
+               </view>
+               <view class="userProductSample1-4">
+                   <view class="textIcon" data-index="{{index}}" data-myid="{{item.id}}" data-num="{{item.num}}"     data-scaleid="{{item.optionsinfo.id}}" data-goodsid="{{item.goodsid}}" catchtap="newMinus">-</view>
+                   <view class="textIcon">{{item.num}}</view>
+                   <view class="textIcon" data-index="{{index}}" data-myid="{{item.id}}" data-num="{{item.num}}"     data-scaleid="{{item.optionsinfo.id}}" data-goodsid="{{item.goodsid}}" data-checked='{{status}}' catchtap="newPlus">+</view>
+               </view>       
+            </view>
+        
+        </view>
+            
+
+           
+        </view>  
+         <!-- 失效宝贝 -->
+        <!-- <view class="userfulProductContent uneffectiveProduct"> -->
+<!--            
+            <view class="uneffectiveProductTitle">
+               <view class="uneffectiveTitleLeft">失效宝贝</view>
+               <view class="uneffectiveTitleRight">清空失效宝贝</view>
+           
+            </view> -->
+            <!-- 模型1  -->
+            <!-- <view class="userProductSample1 uneffectiveProductSam">
+               <view class="userProductSample1-1">
+                  <text class="uneffectiveText">失效</text>
+               </view>
+               <view class="userProductSample1-2">
+                 <view class="userPr2Inner">
+                   <image src="../../images/h-31.png"></image>
+                 </view>
+               </view>
+               <view class="userProductSample1-3">
+                 <text class="userPr3Inner-1">CANINE丝滑洗发露</text>
+                 <text class="userPr3Inner-2">臻致系列_258ml</text>
+
+               </view>
+            
+            </view> -->
+             <!-- 模型1  -->
+            <!-- <view class="userProductSample1 uneffectiveProductSam">
+               <view class="userProductSample1-1">
+                  <text class="uneffectiveText">失效</text>
+               </view>
+               <view class="userProductSample1-2">
+                 <view class="userPr2Inner">
+                   <image src="../../images/h-31.png"></image>
+                 </view>
+               </view>
+               <view class="userProductSample1-3">
+                 <text class="userPr3Inner-1">CANINE丝滑洗发露</text>
+                 <text class="userPr3Inner-2">臻致系列_258ml</text>
+               </view>  
+            </view>
+          
+        </view>    -->
+         <!-- 失效宝贝 -->
+      
+      </view>
+  
+  </view>
+    
+</view>
+  <!-- <view class="bottomContTotal">
+        <view class="bottomContTotal1">
+          <label class="checkbox" >
+            <checkbox value="全选" class="checkboxValue"/>
+            全选
+          </label>
+        </view>
+        <view class="bottomContTotal2">
+          合计:￥189.9
+        </view>
+        <view class="bottomContTotal3">
+          <text class="subBtn">提交订单</text>
+        </view>
+
+    </view> -->
+    <!-- ------------------------------------------ -->
+            <view class='bottom_bar' wx:if="{{userfulProductList!=''}}">
+                <checkbox-group class="kkllcheckbox" bindchange="bindCalcAll">
+                        <checkbox class='all_checkbox' catchtap='bindSelectAll' checked='{{tag}}'></checkbox>  
+                </checkbox-group>
+                <view class='rightall'>
+                    <text>合计：</text><text class='red'>￥{{sum}}</text>
+                    <button class="subBtn" catchtap='onCalcSelect'>提交订单</button>
+
+                    <button class="EmptyShoppingCart" catchtap='emptyShoppingCart'>清空购物车</button>
+
+                </view>
+            </view>
+
+    <!-- -------------------------------------------------- -->
+
+
+    <view class="useCardTicketPart">
+    
+    
+    
+    </view>
